@@ -1,0 +1,74 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="net2gridApiModule"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> /</p>
+	</div>
+	<div id="content">
+	<h1>zigbeeLutService</h1>
+	<p>This AngularJS service contains the ZigBee cluster library, and can be seen as the first component of the NET2GRID SDK.</p>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="getClusterLut">getClusterLut()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns cluster look up table.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getLogClusterLut">getLogClusterLut()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns log cluster look up table.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getIasLut">getIasLut()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns intruder alarm systems look up table.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getArmStateLut">getArmStateLut()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns arming status look up table.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getDataTypeLut">getDataTypeLut()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns data type look up table.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getStatusLut">getStatusLut()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns status look up table.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getArgDataTypeLut">getArgDataTypeLut()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns argument data type look up table.</td>
+			</tr>
+			<tr ng-repeat="attribute in attributes track by $index">
+				<td class="active-link" ui-sref="functionsAttributes" ng-click="changeAttributeContent(attribute.label)">get{{attribute.nameFun}}Attribute</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns {{attribute.name}} attribute.</td>
+			</tr>
+			<tr ng-repeat="command in commands track by $index">
+				<td class="active-link" ui-sref="functionsCommands" ng-click="changeCommandContent(command.label)">get{{command.nameFun}}Command</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns {{command.name}} command.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(zigbeeLutService) {
+
+	//Code here to access the zigbeeLutService
+});</code></pre>	
+	</div>
+</div>

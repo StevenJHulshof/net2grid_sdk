@@ -1,0 +1,34 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="zigbeeLutService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="zigbeeLutService">zigbeeLutService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>getArgDataTypeLut()</h1>
+	<p>The <i class="active-link" ui-sref="getArgDataTypeLut">getArgDataTypeLut()</i> function returns the <i class="active-link" ui-sref="argDataTypeLut">argDataTypeLut</i> object.</p>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="argDataTypeLut">argDataTypeLut</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-default">Object</span></td>
+				<td> Contains command argument data type extension data.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function($scope, zigbeeLutService) {
+
+	$scope.argDataTypeLut = zigbeeLutService.getArgDataTypeLut();
+});</code></pre>
+	</div>
+</div>

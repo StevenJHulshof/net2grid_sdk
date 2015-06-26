@@ -1,0 +1,34 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="radioFrequencyDevicesService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>getImpulsPlug()</h1>
+	<p>Returns the Impuls SmartPlug object.</p>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="impulsPlug">impulsPlug</td>      
+				<td><span class="label label-default">Object</span></td>
+				<td>Contains Impuls smart plug data.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function($scope, radioFrequencyDevicesService) {
+
+	$scope.impulsPlug = radioFrequencyDevicesService.getImpulsPlug();
+});</code></pre>
+	</div>
+</div>

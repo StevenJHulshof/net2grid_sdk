@@ -1,0 +1,52 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>createReadReportingConfigurationPayload(attributes, directions)</h1>
+	<p>The <i class="active-link" ui-sref="createReadReportingConfigurationPayload">createReadReportingConfigurationPayload(attributes, direction)</i> function is used to create the payload of the 
+	<i class="active-link" ui-sref="readReportingConfiguration">readReportingConfiguration(clusterId, attributes, direction)</i> method.</p>
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>attributes</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-default">Object</span></td>
+				<td>Array of attribute objects.</td>
+			</tr>
+			<tr>
+				<td>directions</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-danger">number</span><br></td>
+				<td>Check the SEND configuration (0x01) or the RECEIVE configuration (0x00)</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>payload</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-danger">number</span></td>
+				<td>The payload sent to the NET2GRID SmartBridge.</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</div>

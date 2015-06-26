@@ -1,0 +1,39 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="iasDevicesService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="iasDevicesService">iasDevicesService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>setArmState(code, mode)</h1>
+	<p>Changes the global arming state of all the IAS-sensors in the ZigBee network.</p>
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>code</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>Password code of the intruder alarm system.</td>
+			</tr>
+			<tr>
+				<td>mode</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>Global arming state mode.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(iasDevicesService) {
+
+	iasDevicesService.setArmState('12341234', 'disarm');
+});</code></pre>
+	</div>
+</div>

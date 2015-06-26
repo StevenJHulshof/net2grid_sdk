@@ -1,0 +1,99 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="net2gridApiModule"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> /</p>
+	</div>
+	<div id="content">
+	<h1>radioFrequencyDevicesService</h1>
+	<p>The radio frequency devices are taken care of by the <i class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i>. This service doesn't make use of the ZigBee specifications, 
+		for it works with radio frequencies. The <i class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i> contains a few preconfigured SmartPlug objects which can be used to control 
+		the corresponding manufacturer specific SmartPlugs. There is also the option to add a custom SmartPlug, if the SmartPlug you are using is not available in the <i class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i>.</p>
+	<h2>Injections</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="https://docs.angularjs.org/api/ng/service/$log">$log</a></td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Simple Angular service for logging.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="ipAddressService">ipAddressService</td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Service handling the IP address.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="utilityService">utilityService</td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Service handling all utility functions.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="customPlug">customPlug(name, bitPeriod, protocol, systemCodeBitLength, unitCodeBitLength)</td>      
+				<td><span class="label label-black">Constructor</span></td>
+				<td>Custom smart plug.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="radioFrequencyPlug">radioFrequencyPlug()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Controls manufacturer specific smartplugs.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getImpulsPlug">getImpulsPlug()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns Impuls smart plug data.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getBrennenstuhlRCS1000NPlug">getBrennenstuhlRCS1000NPlug()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns Brennenstuhl RCS-1000N smart plug data.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getClickOnClickOffAPA22300RPlug">getClickOnClickOffAPA22300RPlug()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns ClickOnClickOff APA2-2300R smart plug data.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getIntertechnoITR1500Plug">getIntertechnoITR1500Plug()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns Intertechno ITR-1500 smart plug data.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getElroHomeEasyHE877Plug">getElroHomeEasyHE877Plug()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns Elro HomeEasy HE877 smart plug data.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getSiemensRC018Plug">getSiemensRC018Plug()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns Siemens RC018 smart plug data.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(radioFrequencyDevicesService) {
+
+	//Code here to access the radioFrequencyDevicesService
+});
+</code></pre>
+	</div>
+</div>

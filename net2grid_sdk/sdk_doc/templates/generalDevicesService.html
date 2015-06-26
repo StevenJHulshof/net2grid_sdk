@@ -1,0 +1,88 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="net2gridApiModule"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> /</p>
+	</div>
+	<div id="content">
+	<h1>generalDevicesService</h1>
+	<p>The main functionality of the general devices library, is to create a list of virtual devices corresponding with the actual devices available on the ZigBee network. This list can be 
+		created by calling the setup function <i class="active-link" ui-sref="setupGeneralDevices">setupGeneralDevices()</i>. A virtual device has a list of methods that can be used to address the actual devices.</p>
+	<h2>Injections</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><a href="https://docs.angularjs.org/api/ng/service/$http">$http</a></td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>A core Angular service that facilitates communication with the remote HTTP servers via the browser's XMLHttpRequest object or via JSONP.</td>
+			</tr>
+			<tr>
+				<td><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope">$rootScope</a></td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>The Angular root scope service.</td>
+			</tr>
+			<tr>
+				<td><a href="https://docs.angularjs.org/api/ng/service/$log">$log</a></td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Simple Angular service for logging.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="ipAddressService">ipAddressService</td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Service handling the IP address.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="zigbeeLutService">zigbeeLutServices</td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Service handling all look up tables used in the Net2Grid SDK.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="getGeneralDevices">getGeneralDevices()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns general devices.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="setupGeneralDevices">setupGeneralDevices()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Handles virtual general device configuration.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="logAttributeContent">logAttributeContent(attribute)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Shows content of attribute object in console.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="logCommandContent">logCommandContent(command)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Shows content of command object in console.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(generalDevicesService) {
+
+	//Code here to access the generalDevicesService
+});
+</code></pre>
+	</div>
+</div>

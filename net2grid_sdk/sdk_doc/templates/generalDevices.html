@@ -1,0 +1,86 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="getGeneralDevices"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="generalDevicesService">generalDevicesService</i> / 
+		<i ui-sref="getGeneralDevices">getGeneralDevices()</i> /</p>
+	</div>
+	<div id="content">
+		<h1>generalDevices</h1>
+		<p>The <i class="active-link" ui-sref="generalDevices">generalDevices</i> object contains a list of all general devices found in the ZigBee network. Each device has the following methods available.</p>
+		<h2>Methods</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="logAvailableAttributes">logAvailableAttributes()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>The developer can call this method to print a list in the browser console of the common available attributes of the clusters present in the virtual device. To specify the attribute set of 
+					the device, use the <i class="active-link" ui-sref="discoverAttributes">discoverAttributes(clusterId)</i> method. The <i class="active-link" ui-sref="logAvailableAttributes">logAvailableAttributes()</i> 
+					method can be used as a development tool.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="logAvailableCommands">logAvailableCommands()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>This method does the same as the <i class="active-link" ui-sref="logAvailableAttributes">logAvailableAttributes()</i> method, but prints the common available commands of 
+					the clusters present in the virtual device. This method can also be used as a development tool.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="logDeviceInfo">logDeviceInfo()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>The <i class="active-link" ui-sref="logDeviceInfo">logDeviceInfo()</i> method will print information about the virtual device in the browser console. This method can also be used as a development tool.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="checkCluster">checkCluster(clusterId)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>This method will check whether the input cluster parameter is available in the virtual device. Useful for checking the functionality of the device.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="writeCommand">writeCommand(command, args)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>The <i class="active-link" ui-sref="writeCommand">writeCommand(command, args)</i> method can be used to send cluster specific commands to the actual devices.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="readAttributes">readAttributes(clusterId, attributes)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>This method can be used to read the actual value of one or multiple attributes within a device.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="writeAttributes">writeAttributes(clusterId, attributes, value)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>If an attribute is writable, the <i class="active-link" ui-sref="writeAttributes">writeAttributes(clusterId, attributes, value)</i> method can be used to 
+					directly write values in these attributes.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="discoverAttributes">discoverAttributes(clusterId)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>For a more specific attribute list of a device, the <i class="active-link" ui-sref="discoverAttributes">discoverAttributes(clusterId)</i> method can be called.
+					This method can only return an attribute list of one cluster at a time.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="configureReportingSend">configureReportingSend(clusterId, attributes, timeouts)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>This method can be used if the developer is intending to send reports to the target device.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="configureReportingReceive">configureReportingReceive(clusterId, attributes, minInterval, maxInterval, reportableChange)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>This method can be used if the developer wishes to receive reports from the target device.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="readReportingConfiguration">readReportingConfiguration(clusterId, attributes, directions)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>The <i class="active-link" ui-sref="readReportingConfiguration">readReportingConfiguration(clusterId, attributes, direction)</i> method can be used if the developer wants to know 
+					the details of the reporting configuration of an attribute.</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</div>

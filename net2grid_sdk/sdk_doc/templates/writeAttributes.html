@@ -1,0 +1,92 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="generalDevices"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="generalDevicesService">generalDevicesService</i> / 
+		<i ui-sref="getGeneralDevices">getGeneralDevices()</i> / <i ui-sref="generalDevices">generalDevices</i> /</p>
+	</div>
+	<div id="content">
+		<h1>writeAttributes(clusterId, attributes, value)</h1>
+		<p>If an attribute is writable, the <i class="active-link" ui-sref="writeAttributes">writeAttributes(clusterId, attributes, value)</i> method can be used to 
+			directly write values in these attributes.</p>
+		
+		<p>On a successful call, the return value is a promise containing further information about the call. When failed, an error message will be printed in the browser console, 
+		containing potential data and the HTTP status.</p>
+		
+		<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>clusterId</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The numeric identification code of a cluster.</td>
+			</tr>
+			<tr>
+				<td>attributes</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-default">Object</span></td>
+				<td>The array containing the attribute objects.</td>
+			</tr>
+			<tr>
+				<td>value</td>      
+				<td><span class="label label-royal">Array</span></td>
+				<td>The array containing the values sent to the attribute.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>promise</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-default">Object</span></td>
+				<td>Attribute name, attribute ID, status, attribute type, attribute value.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(ipAddressService, generalDevicesService, zigbeeLutService) {
+
+	ipAddressService.setIp('123.456.7.89');
+
+	generalDevicesService.setupGeneralDevices();
+	
+	$scope.generalDevices;
+	$scope.promise;
+	
+	$scope.$on('generalDevices.update', function(event) {
+		
+		$scope.generalDevices = generalDevicesService.getGeneralDevices();
+	});
+
+	$scope.setLocationDescription = function() {
+	
+		var basicCluster = zigbeeLutService.getClusterLut().ColorControl;	
+		var locationDescriptionAttribute = zigbeeLutService.getLocationDescriptionAttribute();
+		
+		if($scope.generalDevices[0].checkCluster(basicCluster)) {
+		
+			$scope.generalDevices[0].writeAttributes(basicCluster, [locationDescriptionAttribute], ['Main hall'])
+			.then(function(promise) {
+			
+				$scope.promise = promise;
+			});
+		}
+	}
+});</code></pre>
+	</div>
+</div>

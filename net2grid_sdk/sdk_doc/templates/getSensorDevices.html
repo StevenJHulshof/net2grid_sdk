@@ -1,0 +1,43 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="iasDevicesService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="iasDevicesService">iasDevicesService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>getSensorDevices()</h1>
+	<p>Returns the IAS-sensors when called. Make sure to call the <i class="active-link" ui-sref="setupIasSensors">setupIasSensors()</i> function before using this function.</p>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="sensorDevices">sensorDevices</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-default">Object</span></td>
+				<td>Contains all sensor devices as an array.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function($scope, ipAddressService, iasDevicesService) {
+
+	ipAddressService.setIp('123.456.7.89');
+
+	iasDevicesService.setupIasSensors();
+	
+	$scope.sensorDevices;
+
+	$scope.$on('sensorDevices.update', function(event) {
+	
+		$scope.sensorDevices = iasDevicesService.getSensorDevices();
+	});
+});</code></pre>
+	</div>
+</div>

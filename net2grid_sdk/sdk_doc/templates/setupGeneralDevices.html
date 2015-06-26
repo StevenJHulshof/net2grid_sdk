@@ -1,0 +1,22 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="generalDevicesService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="generalDevicesService">generalDevicesService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>setupGeneralDevices()</h1>
+	<p>The <i class="active-link" ui-sref="setupGeneralDevices">setupGeneralDevices()</i> function will scan the ZigBee network for devices and creates virtual duplicates which the app developer can use to control the actual devices.</p>
+	<p>Make sure to set te IP address before calling the <i class="active-link" ui-sref="setupGeneralDevices">setupGeneralDevices()</i> function. The function will broadcast a 'generalDevices.update' event which can be watched before calling the 
+	<i class="active-link" ui-sref="getGeneralDevices">getGeneralDevices()</i> function. When failed, an error message will be printed in the browser console, 
+		containing potential data and the HTTP status.</p>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(ipAddressService, generalDevicesService) {
+
+	ipAddressService.setIp('123.456.7.89');
+
+	generalDevicesService.setupGeneralDevices();
+});</code></pre>
+	</div>
+</div>

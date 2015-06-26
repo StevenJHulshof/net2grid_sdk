@@ -1,0 +1,52 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>convertMaskType(mask)</h1>
+	<p>The <i class="active-link" ui-sref="convertMaskType">convertMaskType(mask)</i> function returns the numeric value of the mask based on the mask name string.</p>
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>mask</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>The arming mask name string</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>maskNum</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The numeric value of the arming mask.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(utilityService) {
+
+	var maskNum = utilityService.convertMaskType('night');
+});</code></pre>
+	
+	</div>
+</div>

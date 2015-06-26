@@ -1,0 +1,80 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="generalDevices"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="generalDevicesService">generalDevicesService</i> / 
+		<i ui-sref="getGeneralDevices">getGeneralDevices()</i> / <i ui-sref="generalDevices">generalDevices</i> /</p>
+	</div>
+	<div id="content">
+		<h1>discoverAttributes(clusterId)</h1>
+		<p>For a more specific attribute list of a device, the <i class="active-link" ui-sref="discoverAttributes">discoverAttributes(clusterId)</i> method can be called.
+			This method can only return an attribute list of one cluster at a time.</p>
+		
+		<p>On a successful call, the return value is a promise containing further information about the call. When failed, an error message will be printed in the browser console, 
+		containing potential data and the HTTP status.</p>
+		
+		<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>clusterId</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The numeric identification code of a cluster.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>promise</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-default">Object</span></td>
+				<td>Device label, cluster ID, end point, attribute ID, attribute type.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(ipAddressService, generalDevicesService, zigbeeLutService) {
+
+	ipAddressService.setIp('123.456.7.89');
+
+	generalDevicesService.setupGeneralDevices();
+	
+	$scope.generalDevices;
+	$scope.promise;
+	
+	$scope.$on('generalDevices.update', function(event) {
+		
+		$scope.generalDevices = generalDevicesService.getGeneralDevices();
+	});
+
+	$scope.getBasicClusterDiscoveredAttributes = function() {
+	
+		var basicCluster = zigbeeLutService.getClusterLut().ColorControl;	
+		
+		if($scope.generalDevices[0].checkCluster(basicCluster)) {
+		
+			$scope.generalDevices[0].discoverAttributes(basicCluster).then(function(promise) {
+			
+				$scope.promise = promise;
+			});
+		}
+	}
+});</code></pre>
+	</div>
+</div>

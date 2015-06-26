@@ -1,0 +1,77 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="radioFrequencyDevicesService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>radioFrequencyPlug(plug, systemCode, unitCode, value, group)</h1>
+	<p> This function changes the state of a RF-plug. If the function fails to deliver the promise, an error message is printed into the console. 
+	Catching the promise is not a necessity, but it is recommended to do so, for it contains information about the used RF-pluf and the status of the ZGD request.</p>
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>plug</td>      
+				<td><span class="label label-default">Object</span></td>
+				<td>The RF plug object.</td>
+			</tr>
+			<tr>
+				<td>systemCode</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The system code of the RF-plug.</td>
+			</tr>
+			<tr>
+				<td>unitCode</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The unit code of the RF-plug.</td>
+			</tr>
+			<tr>
+				<td>value</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The value sent to the RF-plug (0/1)</td>
+			</tr>
+			<tr>
+				<td>group</td>      
+				<td><span class="label label-success">boolean</span></td>
+				<td>Determines whether all RF-plugs with the same system codes are triggered.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>promise</td>      
+				<td><span class="label label-default">Object</span></td>
+				<td>Name of the plug, value of its state, status.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(radioFrequencyDevicesService) {
+
+	<b>var</b> impulsPlus = radioFrequencyDevicesService.getImpulsPlug();
+	
+	radioFrequencyDevicesService.radioFrequencyPlug(impulsPlug, 0, 0, 1, false).then(function(promise) {
+	
+		<b>var</b> promise = promise;
+	}); // Set Impuls smartplug to ON
+});</code></pre>
+	</div>
+</div>

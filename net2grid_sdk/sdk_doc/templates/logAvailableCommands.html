@@ -1,0 +1,33 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="generalDevices"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="generalDevicesService">generalDevicesService</i> / 
+		<i ui-sref="getGeneralDevices">getGeneralDevices()</i> / <i ui-sref="generalDevices">generalDevices</i> /</p>
+	</div>
+	<div id="content">
+		<h1>logAvailableCommands()</h1>
+		<p>This method does the same as the <i class="active-link" ui-sref="logAvailableAttributes">logAvailableAttributes()</i> method, but prints the common available commands of 
+					the clusters present in the virtual device. This method can also be used as a development tool.</p>
+				<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(ipAddressService, generalDevicesService) {
+
+	ipAddressService.setIp('123.456.7.89');
+
+	generalDevicesService.setupGeneralDevices();
+	
+	$scope.generalDevices;
+	
+	$scope.$on('generalDevices.update', function(event) {
+		
+		$scope.generalDevices = generalDevicesService.getGeneralDevices();
+	});
+
+	$scope.logAvailableCommands = function() {
+	
+		$scope.generalDevices[0].logAvailableCommands();
+	}
+});</code></pre>			
+	</div>
+</div>

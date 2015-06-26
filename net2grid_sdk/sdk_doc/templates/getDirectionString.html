@@ -1,0 +1,52 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>getDirectionString(dirNum)</h1>
+	<p>The <i class="active-link" ui-sref="getDirectionString">getDirectionString(dirNum)</i> function returns the direction as a string based on the numeric direction value.</p>
+	<h2>Exemaple code</h2>
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>dirNum</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The numeric value of the direction.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>dirStr</td>      
+				<td><span class="label label-success">boolean</span></td>
+				<td>The string value of the direction.</td>
+			</tr>
+		</tbody>
+	</table>
+<pre><code>myAppModule.controller('myAppCtrl', function(utilityService) {
+
+	var direction = utilityService.getDirectionString(0x00); //Receive
+});</code></pre>
+	
+	</div>
+</div>

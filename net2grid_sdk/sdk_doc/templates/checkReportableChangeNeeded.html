@@ -1,0 +1,63 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>checkReportableChangeNeeded(attributes, reportableChange)</h1>
+	<p>The <i class="active-link" ui-sref="checkReportableChangeNeeded">checkReportableChangeNeeded(attributes, reportableChange)</i> function checks whether the attributes need a reportable change parameter.
+	When the attribute data type is 'analog', a reportable change parameter is needed.</p>
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>attributes</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-default">Object</span></td>
+				<td>The array containing the attribute objects.</td>
+			</tr>
+			<tr>
+				<td>reportableChange</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-danger">number</span></td>
+				<td>The array containing the reportable change values.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>check</td>      
+				<td><span class="label label-success">boolean</span></td>
+				<td>Returns true when the attributes and the reportable value input matches.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(utilityService, zigbeeLutService) {
+
+	var onOffAttribute = zigbeeLutService.getOnOffAttribute();
+	
+	if(utilityService.checkReportableChangeNeeded([onOffAttribute], [null])){
+	
+		//Do something
+	}
+});</code></pre>
+	
+	</div>
+</div>

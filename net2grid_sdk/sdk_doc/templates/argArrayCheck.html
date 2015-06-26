@@ -1,0 +1,62 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>argArrayCheck(command, args)</h1>
+	<p>The <i class="active-link" ui-sref="argArrayCheck">argArrayCheck(command, args)</i> function checks whether an argument matches with the 'array' tag in the command object.</p> 
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>command</td>      
+				<td><span class="label label-default">Object</span></td>
+				<td>The cluster specific command object</td>
+			</tr>
+			<tr>
+				<td>args</td>      
+				<td><span class="label label-royal">Array</span></td>
+				<td>The array of arguments. Arrays can be nested inside this array.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>arrCheck</td>      
+				<td><span class="label label-success">boolean</span></td>
+				<td>Returns true if the argument matches with the 'array' tag of the cluster specific command.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(zigbeeLutService, utilityService) {
+
+	var moveToColorCommand = zigbeeLutService.getMoveToColorCommand();
+	
+	if(utilityService.argArrayCheck(moveToColorCommand, [0x4000, 0x9900, 20])) {
+	
+		//Do something
+	}
+});</code></pre>
+	
+	</div>
+</div>

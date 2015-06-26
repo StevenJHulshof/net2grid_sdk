@@ -1,0 +1,162 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="net2gridApiModule"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> /</p>
+	</div>
+	<div id="content">
+	<h1>utilityService</h1>
+	<p>The <i class="active-link" ui-sref="utilityService">utilityService</i> contains some utility purpose functions. Most of these functions are used for building the other servivces available in the 
+	<i class="active-link" ui-sref="net2gridApiModule">net2gridApiModule</i>. Check the detailed documentation of the functions itself to see their use in mobile applications.
+	The <i class="active-link" ui-sref="utilityService">utilityService</i> can be injected into any other service, controller or directive.</p>
+</code></pre>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="euiToHex">euiToHex(euiDec)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns hexadecimal value of eui.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getEndPoint">getEndPoint(clusterId, endPoints)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Checks whether cluster is available and returns end point.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="checkAttrAvailability">checkAttrAvailability(clusterId, attributes)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Checks whether the chosen cluster contains the chosen attributes.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="logGlobalCommandClusterError">logGlobalCommandClusterError(clusterId)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Prints missing cluster error message to console.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getDataTypeLength">getDataTypeLength(id)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Checks datatype length of payload id.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="convertPayload">convertPayload(payload, length)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Converts response payload to correct value (ReadAttributes).</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="argArrayCheck">argArrayCheck(command, args)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Checks whether the argument matches with the array tag.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="checkWritability">checkWritability(attributes)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Check whether attributes are writable.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="createWriteAttributesPayload">createWriteAttributesPayload(attributes, value)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Create payload for the writeAttributes command.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getStatus">getStatus(value)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Get status from look up table.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getDataTypeName">getDataTypeName(id)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns data type name.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="createReadReportingConfigurationPayload">createReadReportingConfigurationPayload(attributes, directions)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Create payload of the readReportingConfiguration command.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getDataTypeAdFromId">getDataTypeAdFromId(id)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Checks whether datatype is 'analog' or 'discrete' using id.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="parsePayloadNum">parsePayloadNum(payload)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Parses payload to one value.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getDataTypeInvalidNumber">getDataTypeInvalidNumber(id)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns invalid number of chosen data type.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="createConfigureReportingSendPayload">createConfigureReportingSendPayload(attributes, timeouts)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Create payload of ConfigureReportingSend command.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getDirectionString">getDirectionString(num)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns direction as a string.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="checkReportableChangeNeeded">checkReportableChangeNeeded(attributes, reportableChange)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Checks whether the reportableChange argument is needed.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getDataTypeAdFromName">getDataTypeAdFromName(name)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Checks whether datatype is 'analog' or 'discrete' using name.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getDataTypeIdFromName">getDataTypeIdFromName(name)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns id of chosen datatype name.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="createConfigureReportingReceivePayload">createConfigureReportingReceivePayload(attributes, minInterval, maxInterval, reportableChange)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Creates payload of ConfigureReportingReceive command.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="createRadioFrequencyPlugPayload">createRadioFrequencyPlugPayload(plug, systemCode, unitCode, value, group)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Creates payload of radioFrequencyPlug command.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="createWriteCommandPayload">createWriteCommandPayload(args, command)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Creates payload of writeCommand command.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="checkArmState">checkArmState(armState, mask)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns active arm state.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="convertMaskType">convertMaskType(mask)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Converts mask string into number.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="createReadAttributesPayload">createReadAttributesPayload(attributes)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Creates payload of readAttributes command.</</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(utilityService) {
+
+	//Code here to access the utilityService
+});
+	</div>
+</div>

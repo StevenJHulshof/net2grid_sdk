@@ -1,0 +1,51 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="userService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="userService">userService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>setUserData(clientId, clientSecret, userName, passWord)</h1>
+	<p>The <i class="active-link" ui-sref="setUserData">setUserData(clientId, clientSecret, userName, passWord)</i> function is used to store the user data into the 
+	<i class="active-link" ui-sref="userService">userService</i>.</p>
+
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>clientId</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>Identification of the client developer.</td>
+			</tr>
+			<tr>
+				<td>clientSecret</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>Authorization of the client developer.</td>
+			</tr>
+			<tr>
+				<td>userName</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>User name</td>
+			</tr>
+			<tr>
+				<td>passWord</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>password</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(userService) {
+
+	userService.setUserData('demoapp', 'demopass', 'zll', 'hK86u8G7');
+});</code></pre>
+	</div>
+</div>

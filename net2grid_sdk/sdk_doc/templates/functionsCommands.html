@@ -1,0 +1,35 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="zigbeeLutService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="zigbeeLutService">zigbeeLutService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>get{{content.nameFun}}Command()</h1>
+	<p>The <i class="active-link" ui-sref="functionsCommands" ng-click="changeCommandContent(content.label)">get{{content.nameFun}}Command()</i> function returns the 
+	<i class="active-link" ui-sref="objectsCommands" ng-click="changeCommandContent(content.label)">{{content.nameObj}}Command</i> object.</p>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="objectsCommands" ng-click="changeCommandContent(content.label)">{{content.nameObj}}Command</td>      
+				<td><span class="label label-default">Object</span></td>
+				<td>Contains {{content.name}} command data.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function($scope, zigbeeLutService) {
+
+	$scope.{{content.nameObj}}Command = zigbeeLutService.get{{content.nameFun}}Command();
+});</code></pre>
+	</div>
+</div>

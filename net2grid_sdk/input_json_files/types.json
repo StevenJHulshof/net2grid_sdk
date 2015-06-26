@@ -1,0 +1,3290 @@
+﻿{
+    "types": {
+        "bitmap": [
+            {
+                "field": [
+                    {
+                        "name": "operational",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "adjusting",
+                        "mask": "0x2"
+                    },
+                    {
+                        "name": "opening",
+                        "mask": "0x4"
+                    },
+                    {
+                        "name": "motorOpening",
+                        "mask": "0x8"
+                    }
+                ],
+                "name": "ShadeClosureStatus",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "GeneralHwFault",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "GeneralSwFault",
+                        "mask": "0x2"
+                    }
+                ],
+                "name": "AlarmMask",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "StartMode1",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "StartupMode2",
+                        "mask": "0x2"
+                    },
+                    {
+                        "name": "StartupMode3",
+                        "mask": "0x4"
+                    },
+                    {
+                        "name": "Immediate",
+                        "mask": "0x8"
+                    }
+                ],
+                "name": "RestartOptions",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "ResetCurrent",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "ResetAll",
+                        "mask": "0x2"
+                    },
+                    {
+                        "name": "EraseIndex",
+                        "mask": "0x4"
+                    }
+                ],
+                "name": "ResetOptions",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "VoltageTooLow",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "VoltageTooHigh",
+                        "mask": "0x2"
+                    },
+                    {
+                        "name": "MainsPowerSupplyLost",
+                        "mask": "0x4"
+                    }
+                ],
+                "name": "MainsAlarmMask",
+                "type": "BITMAP8"
+            },
+            {
+                "field": {
+                    "name": "VoltageTooLow",
+                    "mask": "0x1"
+                },
+                "name": "BatteryAlarmMask",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "TooLow",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "TooHigh",
+                        "mask": "0x2"
+                    }
+                ],
+                "name": "DeviceTempAlarmMask",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "MasterClock",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "Synchronized",
+                        "mask": "0x2"
+                    }
+                ],
+                "name": "TimeStatusMask",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "absolute",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "2-D",
+                        "mask": "0x2"
+                    },
+                    {
+                        "name": "coordinateSystem",
+                        "mask": "0xc"
+                    }
+                ],
+                "name": "LocationType",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "absoluteOnly",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "recalculate",
+                        "mask": "0x2"
+                    },
+                    {
+                        "name": "broadcast",
+                        "mask": "0x4"
+                    },
+                    {
+                        "name": "broadcastResponse",
+                        "mask": "0x8"
+                    },
+                    {
+                        "name": "compactResponse",
+                        "mask": "0x10"
+                    }
+                ],
+                "name": "GetLocationDataFlags",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "deviceFault",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "supplyfault",
+                        "mask": "0x2"
+                    },
+                    {
+                        "name": "speedLow",
+                        "mask": "0x4"
+                    },
+                    {
+                        "name": "speedHigh",
+                        "mask": "0x8"
+                    },
+                    {
+                        "name": "localOverride",
+                        "mask": "0x10"
+                    },
+                    {
+                        "name": "running",
+                        "mask": "0x20"
+                    },
+                    {
+                        "name": "remotePressure",
+                        "mask": "0x40"
+                    },
+                    {
+                        "name": "remoteFlow",
+                        "mask": "0x80"
+                    },
+                    {
+                        "name": "remoteTemperature",
+                        "mask": "0x100"
+                    }
+                ],
+                "name": "PumpStatus",
+                "type": "BITMAP16"
+            },
+            {
+                "field": [
+                    {
+                        "name": "SupplyVoltageTooLow",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "SupplyVoltageTooHigh",
+                        "mask": "0x2"
+                    },
+                    {
+                        "name": "PowerMissingPhase",
+                        "mask": "0x4"
+                    },
+                    {
+                        "name": "SystemPressureTooLow",
+                        "mask": "0x8"
+                    },
+                    {
+                        "name": "SystemPressureTooHigh",
+                        "mask": "0x10"
+                    },
+                    {
+                        "name": "DryRunning",
+                        "mask": "0x20"
+                    },
+                    {
+                        "name": "MotorTemperatureTooHigh",
+                        "mask": "0x40"
+                    },
+                    {
+                        "name": "PumpMotorHasFatalFailure",
+                        "mask": "0x80"
+                    },
+                    {
+                        "name": "ElectronicTemperatureTooHigh",
+                        "mask": "0x100"
+                    },
+                    {
+                        "name": "PumpBlocked",
+                        "mask": "0x200"
+                    },
+                    {
+                        "name": "SensorFailure",
+                        "mask": "0x400"
+                    },
+                    {
+                        "name": "ElectronicNonFatalFailure",
+                        "mask": "0x800"
+                    },
+                    {
+                        "name": "ElectronicFatalFailure",
+                        "mask": "0x1000"
+                    },
+                    {
+                        "name": "GeneralFault",
+                        "mask": "0x2000"
+                    }
+                ],
+                "name": "PumpAlarmMask",
+                "type": "BITMAP16"
+            },
+            {
+                "field": {
+                    "name": "occupied",
+                    "mask": "0x1"
+                },
+                "name": "ThermostatOccupancy",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "localTempSensedRemotely",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "outdoorTempSensedRemotely",
+                        "mask": "0x2"
+                    },
+                    {
+                        "name": "occupancySensedRemotely",
+                        "mask": "0x4"
+                    }
+                ],
+                "name": "ThermostatSensing",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "initializationFailure",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "hardwareFailure",
+                        "mask": "0x2"
+                    },
+                    {
+                        "name": "selfcalibrationFailure",
+                        "mask": "0x4"
+                    }
+                ],
+                "name": "ThermostatAlarmMask",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "NonOperational",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "LampNotInSocket",
+                        "mask": "0x2"
+                    }
+                ],
+                "name": "BallastStatus",
+                "type": "BITMAP8"
+            },
+            {
+                "field": {
+                    "name": "lampBurnHours",
+                    "mask": "0x1"
+                },
+                "name": "LampAlarmMode",
+                "type": "BITMAP8"
+            },
+            {
+                "field": {
+                    "name": "occupied",
+                    "mask": "0x1"
+                },
+                "name": "Occupancy",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "alarm1",
+                        "mask": "0x1"
+                    },
+                    {
+                        "name": "alarm2",
+                        "mask": "0x2"
+                    },
+                    {
+                        "name": "tamper",
+                        "mask": "0x4"
+                    },
+                    {
+                        "name": "battery",
+                        "mask": "0x8"
+                    },
+                    {
+                        "name": "supervisionReports",
+                        "mask": "0x10"
+                    },
+                    {
+                        "name": "restoreReports",
+                        "mask": "0x20"
+                    },
+                    {
+                        "name": "trouble",
+                        "mask": "0x40"
+                    },
+                    {
+                        "name": "AC",
+                        "mask": "0x80"
+                    },
+                    {
+                        "name": "test",
+                        "mask": "0x100"
+                    },
+                    {
+                        "name": "batteryDefect",
+                        "mask": "0x200"
+                    }
+                ],
+                "name": "IasZoneStatus",
+                "type": "BITMAP16"
+            },
+            {
+                "field": [
+                    {
+                        "name": "mode",
+                        "mask": "0xf0"
+                    },
+                    {
+                        "name": "strobe",
+                        "mask": "0xc"
+                    }
+                ],
+                "name": "WarningInfo",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "mode",
+                        "mask": "0xf0"
+                    },
+                    {
+                        "name": "strobe",
+                        "mask": "0x8"
+                    },
+                    {
+                        "name": "level",
+                        "mask": "0x3"
+                    }
+                ],
+                "name": "SquawkInfo",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "NumberOfDigitsToTheRightOfTheDecimalPoint",
+                        "mask": "0x07"
+                    },
+                    {
+                        "name": "NumberOfDigitsToTheLeftOfTheDecimalPoint",
+                        "mask": "0x78"
+                    },
+                    {
+                        "name": "SuppressLeadingZeros",
+                        "mask": "0x80"
+                    }
+                ],
+                "name": "EnergyFormatting",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "RemoteEnableFlags",
+                        "mask": "0x0F"
+                    },
+                    {
+                        "name": "DeviceStatus2Structure",
+                        "mask": "0xF0"
+                    }
+                ],
+                "name": "RemoteEnableFlagsAndDeviceStatus2",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "Minutes",
+                        "mask": "0x003F"
+                    },
+                    {
+                        "name": "TimeEncoding",
+                        "mask": "0x00C0"
+                    },
+                    {
+                        "name": "Hours",
+                        "mask": "0xFF00"
+                    }
+                ],
+                "name": "StartTime",
+                "type": "BITMAP16"
+            },
+            {
+                "field": [
+                    {
+                        "name": "Sunday",
+                        "mask": "0x01"
+                    },
+                    {
+                        "name": "Monday",
+                        "mask": "0x02"
+                    },
+                    {
+                        "name": "Tuesday",
+                        "mask": "0x04"
+                    },
+                    {
+                        "name": "Wednesday",
+                        "mask": "0x08"
+                    },
+                    {
+                        "name": "Thursday",
+                        "mask": "0x10"
+                    },
+                    {
+                        "name": "Friday",
+                        "mask": "0x20"
+                    },
+                    {
+                        "name": "Saturday",
+                        "mask": "0x40"
+                    }
+                ],
+                "name": "DoorLockDayOfWeek",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "HeatStateOn",
+                        "mask": "0x0001"
+                    },
+                    {
+                        "name": "CoolStateOn",
+                        "mask": "0x0002"
+                    },
+                    {
+                        "name": "FanStateOn",
+                        "mask": "0x0004"
+                    },
+                    {
+                        "name": "HeatSecondStageStateOn",
+                        "mask": "0x0008"
+                    },
+                    {
+                        "name": "CoolSecondStageStateOn",
+                        "mask": "0x0010"
+                    },
+                    {
+                        "name": "FanSecondStageStateOn",
+                        "mask": "0x0020"
+                    },
+                    {
+                        "name": "FanThirdStageStateOn",
+                        "mask": "0x0040"
+                    }
+                ],
+                "name": "ThermostatRunningState",
+                "type": "BITMAP16"
+            },
+            {
+                "field": [
+                    {
+                        "name": "Sunday",
+                        "mask": "0x01"
+                    },
+                    {
+                        "name": "Monday",
+                        "mask": "0x02"
+                    },
+                    {
+                        "name": "Tuesday",
+                        "mask": "0x04"
+                    },
+                    {
+                        "name": "Wednesday",
+                        "mask": "0x08"
+                    },
+                    {
+                        "name": "Thursday",
+                        "mask": "0x10"
+                    },
+                    {
+                        "name": "Friday",
+                        "mask": "0x20"
+                    },
+                    {
+                        "name": "Saturday",
+                        "mask": "0x40"
+                    },
+                    {
+                        "name": "AwayOrVacation",
+                        "mask": "0x80"
+                    }
+                ],
+                "name": "DayOfWeek",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "HeatSetpointFieldPresent",
+                        "mask": "0x01"
+                    },
+                    {
+                        "name": "CoolSetpointFieldPresent",
+                        "mask": "0x02"
+                    }
+                ],
+                "name": "ModeForSequence",
+                "type": "BITMAP8"
+            },
+            {
+                "field": [
+                    {
+                        "name": "AlertId",
+                        "mask": "0x0000FF"
+                    },
+                    {
+                        "name": "Category",
+                        "mask": "0x000F00"
+                    },
+                    {
+                        "name": "PresenceRecovery",
+                        "mask": "0x003000"
+                    }
+                ],
+                "name": "AlertStructure",
+                "type": "BITMAP24"
+            },
+            {
+                "field": [
+                    {
+                        "name": "NumberOfAlerts",
+                        "mask": "0x0F"
+                    },
+                    {
+                        "name": "TypeOfAlert",
+                        "mask": "0xF0"
+                    }
+                ],
+                "name": "AlertCount",
+                "type": "BITMAP8"
+            }
+        ],
+        "enum": [
+            {
+                "item": [
+                    {
+                        "name": "NoAction",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "FormNetwork",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "RejoinNetwork",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "StartFromScratch",
+                        "value": "0x03"
+                    }
+                ],
+                "name": "CommissioningStartupControl",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Server",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Client",
+                        "value": "0x01"
+                    }
+                ],
+                "name": "EzModeCommissioningClusterType",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "normal",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "configure",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "OperatingMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "SUCCESS",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "FAILURE",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "REQUESTDENIED",
+                        "value": "0x70"
+                    },
+                    {
+                        "name": "MULTIPLEREQUESTNOTALLOWED",
+                        "value": "0x71"
+                    },
+                    {
+                        "name": "INDICATIONREDIRECTIONTOAP",
+                        "value": "0x72"
+                    },
+                    {
+                        "name": "PREFERENCEDENIED",
+                        "value": "0x73"
+                    },
+                    {
+                        "name": "PREFERENCEIGNORED",
+                        "value": "0x74"
+                    },
+                    {
+                        "name": "NOTAUTHORIZED",
+                        "value": "0x7E"
+                    },
+                    {
+                        "name": "RESERVEDFIELDNOTZERO",
+                        "value": "0x7F"
+                    },
+                    {
+                        "name": "MALFORMEDCOMMAND",
+                        "value": "0x80"
+                    },
+                    {
+                        "name": "UNSUPCLUSTERCOMMAND",
+                        "value": "0x81"
+                    },
+                    {
+                        "name": "UNSUPGENERALCOMMAND",
+                        "value": "0x82"
+                    },
+                    {
+                        "name": "UNSUPMANUFCLUSTERCOMMAND",
+                        "value": "0x83"
+                    },
+                    {
+                        "name": "UNSUPMANUFGENERALCOMMAND",
+                        "value": "0x84"
+                    },
+                    {
+                        "name": "INVALIDFIELD",
+                        "value": "0x85"
+                    },
+                    {
+                        "name": "UNSUPPORTEDATTRIBUTE",
+                        "value": "0x86"
+                    },
+                    {
+                        "name": "INVALIDVALUE",
+                        "value": "0x87"
+                    },
+                    {
+                        "name": "READONLY",
+                        "value": "0x88"
+                    },
+                    {
+                        "name": "INSUFFICIENTSPACE",
+                        "value": "0x89"
+                    },
+                    {
+                        "name": "DUPLICATEEXISTS",
+                        "value": "0x8A"
+                    },
+                    {
+                        "name": "NOTFOUND",
+                        "value": "0x8B"
+                    },
+                    {
+                        "name": "UNREPORTABLEATTRIBUTE",
+                        "value": "0x8C"
+                    },
+                    {
+                        "name": "INVALIDDATATYPE",
+                        "value": "0x8D"
+                    },
+                    {
+                        "name": "INVALIDSELECTOR",
+                        "value": "0x8E"
+                    },
+                    {
+                        "name": "WRITEONLY",
+                        "value": "0x8F"
+                    },
+                    {
+                        "name": "INCONSISTENTSTARTUPSTATE",
+                        "value": "0x90"
+                    },
+                    {
+                        "name": "DEFINEDOUTOFBAND",
+                        "value": "0x91"
+                    },
+                    {
+                        "name": "INCONSISTENT",
+                        "value": "0x92"
+                    },
+                    {
+                        "name": "ACTIONDENIED",
+                        "value": "0x93"
+                    },
+                    {
+                        "name": "TIMEOUT",
+                        "value": "0x94"
+                    },
+                    {
+                        "name": "ABORT",
+                        "value": "0x95"
+                    },
+                    {
+                        "name": "INVALIDIMAGE",
+                        "value": "0x96"
+                    },
+                    {
+                        "name": "WAITFORDATA",
+                        "value": "0x97"
+                    },
+                    {
+                        "name": "NOIMAGEAVAILABLE",
+                        "value": "0x98"
+                    },
+                    {
+                        "name": "REQUIREMOREIMAGE",
+                        "value": "0x99"
+                    },
+                    {
+                        "name": "HARDWAREFAILURE",
+                        "value": "0xC0"
+                    },
+                    {
+                        "name": "SOFTWAREFAILURE",
+                        "value": "0xC1"
+                    },
+                    {
+                        "name": "CALIBRATIONERROR",
+                        "value": "0xC2"
+                    }
+                ],
+                "name": "Status",
+                "type": "INT8U",
+                "description": "Status codes used in the ZigBee Cluster Library"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Unknown",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "SinglePhaseMains",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "ThreePhaseMains",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "Battery",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "DcSource",
+                        "value": "0x4"
+                    },
+                    {
+                        "name": "EmergencyMainsConstantPower",
+                        "value": "0x5"
+                    },
+                    {
+                        "name": "EmergencyMainsTransferSwitch",
+                        "value": "0x6"
+                    },
+                    {
+                        "name": "BatteryBackup",
+                        "value": "0x80"
+                    }
+                ],
+                "name": "PowerSource",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Unspecified",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "FirstProfileSpecifiedValue",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "LastProfileSpecifiedValue",
+                        "value": "0x7f"
+                    },
+                    {
+                        "name": "Unknown",
+                        "value": "0xff"
+                    }
+                ],
+                "name": "PhysicalEnvironment",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "NoBattery",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "BuiltIn",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "Other",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "AA",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "AAA",
+                        "value": "0x4"
+                    },
+                    {
+                        "name": "C",
+                        "value": "0x5"
+                    },
+                    {
+                        "name": "D",
+                        "value": "0x6"
+                    },
+                    {
+                        "name": "Unknown",
+                        "value": "0xff"
+                    }
+                ],
+                "name": "BatterySize",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Toggle",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Momentary",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "MultiFunction",
+                        "value": "0x02",
+                        "introducedIn": "ha-1.2-05-3520-29"
+                    }
+                ],
+                "name": "SwitchType",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "On",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "Off",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "Toggle",
+                        "value": "0x2"
+                    }
+                ],
+                "name": "SwitchActions",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Up",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "Down",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "MoveMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Up",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "Down",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "StepMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Lateration",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "Signposting",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "RfFingerprinting",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "OutOfBand",
+                        "value": "0x3"
+                    }
+                ],
+                "name": "LocationMethod",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "normal",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "minimum",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "maximum",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "local",
+                        "value": "0x3"
+                    }
+                ],
+                "name": "PumpOperationMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "constantSpeed",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "constantPressure",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "proportionalPressure",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "constantFlow",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "constantTemperature",
+                        "value": "0x5"
+                    },
+                    {
+                        "name": "automatic",
+                        "value": "0x7"
+                    }
+                ],
+                "name": "PumpControlMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "coolingOnly",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "coolingWithReheat",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "heatingOnly",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "heatingWithReheat",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "coolingAndHeating",
+                        "value": "0x4"
+                    },
+                    {
+                        "name": "coolingAndHeatingWithReheat",
+                        "value": "0x5"
+                    }
+                ],
+                "name": "ThermostatControlSequence",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "off",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "auto",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "cool",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "heat",
+                        "value": "0x4"
+                    },
+                    {
+                        "name": "emergencyHeating",
+                        "value": "0x5"
+                    },
+                    {
+                        "name": "precooling",
+                        "value": "0x6"
+                    },
+                    {
+                        "name": "fanOnly",
+                        "value": "0x7"
+                    }
+                ],
+                "name": "ThermostatSystemMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "heatSetpoint",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "coolSetpoint",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "heatAndCoolSetpoints",
+                        "value": "0x2"
+                    }
+                ],
+                "name": "SetpointAdjustMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "off",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "low",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "medium",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "high",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "on",
+                        "value": "0x4"
+                    },
+                    {
+                        "name": "auto",
+                        "value": "0x5"
+                    },
+                    {
+                        "name": "smart",
+                        "value": "0x6"
+                    }
+                ],
+                "name": "FanMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "LowMedHigh",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "lowHigh",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "LowMedHighAuto",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "lowHighAuto",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "onAuto",
+                        "value": "0x4"
+                    }
+                ],
+                "name": "FanModeSequence",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "measureLocally",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "updatedOverTheNetwork",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "RelativeHumidityMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "notAllowed",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "allowed",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "DehumidifcationLockout",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "notDisplayed",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "displayed",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "RelativeHumidityDisplay",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "celsius",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "fahrenheit",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "TemperatureDisplayMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "noLockout",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "levelOneLockout",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "levelTwoLockout",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "levelThreeLockout",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "levelFourLockout",
+                        "value": "0x4"
+                    },
+                    {
+                        "name": "levelfiveLockout",
+                        "value": "0x5"
+                    }
+                ],
+                "name": "KeypadLockout",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "ShortestDistance",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "LongestDistance",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "Up",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "Down",
+                        "value": "0x3"
+                    }
+                ],
+                "name": "HueDirection",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "stop",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "Up",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "Down",
+                        "value": "0x3"
+                    }
+                ],
+                "name": "HueMoveMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Up",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "Down",
+                        "value": "0x3"
+                    }
+                ],
+                "name": "HueStepMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "stop",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "Up",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "Down",
+                        "value": "0x3"
+                    }
+                ],
+                "name": "SaturationMoveMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Up",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "Down",
+                        "value": "0x3"
+                    }
+                ],
+                "name": "SaturationStepMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "CurrentHueAndCurrentSaturation",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "CurrentXAndCurrentY",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "ColorTemperature",
+                        "value": "0x02"
+                    }
+                ],
+                "name": "ColorMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "photodiode",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "CMOS",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "MeasurementLightSensorType",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "OnTarget",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "BelowTarget",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "AboveTarget",
+                        "value": "0x2"
+                    }
+                ],
+                "name": "LevelStatus",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "photodiode",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "CMOS",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "SensingLightSensorType",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "PIR",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "Ultrasonic",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "pirAndUltrasonic",
+                        "value": "0x2"
+                    }
+                ],
+                "name": "OccupancySensorType",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "notEnrolled",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "enrolled",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "IasZoneState",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "standardCie",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "motionSensor",
+                        "value": "0xd"
+                    },
+                    {
+                        "name": "contactSwitch",
+                        "value": "0x15"
+                    },
+                    {
+                        "name": "fireSensor",
+                        "value": "0x28"
+                    },
+                    {
+                        "name": "waterSensor",
+                        "value": "0x2a"
+                    },
+                    {
+                        "name": "gasSensor",
+                        "value": "0x2b"
+                    },
+                    {
+                        "name": "personalEmergencyDevice",
+                        "value": "0x2c"
+                    },
+                    {
+                        "name": "vibrationMovementSensor",
+                        "value": "0x2d"
+                    },
+                    {
+                        "name": "remoteControl",
+                        "value": "0x10f"
+                    },
+                    {
+                        "name": "keyFob",
+                        "value": "0x115"
+                    },
+                    {
+                        "name": "keypad",
+                        "value": "0x21d"
+                    },
+                    {
+                        "name": "standardWarningDevice",
+                        "value": "0x225"
+                    },
+                    {
+                        "name": "glassBreakSensor",
+                        "value": "0x226"
+                    },
+                    {
+                        "name": "carbonMonoxideSensor",
+                        "value": "0x227"
+                    }
+                ],
+                "name": "IasZoneType",
+                "type": "ENUM16"
+            },
+            {
+                "item": [
+                    {
+                        "name": "success",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "notSupported",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "noEnrollPermit",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "tooManyZones",
+                        "value": "0x3"
+                    }
+                ],
+                "name": "IasEnrollResponseCode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "disarm",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "armDayHomeZonesOnly",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "armNightSleepZonesOnly",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "armAllZones",
+                        "value": "0x3"
+                    }
+                ],
+                "name": "IasAceArmMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "allZonesDisarmed",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "onlyDayHomeZonesArmed",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "onlyNightSleepZonesArmed",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "allZonesArmed",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "invalidArmDisarmCode",
+                        "value": "0x04"
+                    },
+                    {
+                        "name": "notReadyToArm",
+                        "value": "0x05"
+                    },
+                    {
+                        "name": "alreadyDisarmed",
+                        "value": "0x06"
+                    }
+                ],
+                "name": "IasAceArmNotification",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "mute",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "defaultSound",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "IasAceAudibleNotification",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "noAlarm",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "burglar",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "fire",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "emergency",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "policePanic",
+                        "value": "0x4"
+                    },
+                    {
+                        "name": "firePanic",
+                        "value": "0x5"
+                    },
+                    {
+                        "name": "emergencyPanic",
+                        "value": "0x6"
+                    }
+                ],
+                "name": "IasAceAlarmStatus",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "panelDisarmed",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "armedStay",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "armedNight",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "armedAway",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "exitDelay",
+                        "value": "0x04"
+                    },
+                    {
+                        "name": "entryDelay",
+                        "value": "0x05"
+                    },
+                    {
+                        "name": "notReadyToArm",
+                        "value": "0x06"
+                    },
+                    {
+                        "name": "inAlarm",
+                        "value": "0x07"
+                    },
+                    {
+                        "name": "armingStay",
+                        "value": "0x08"
+                    },
+                    {
+                        "name": "armingNight",
+                        "value": "0x09"
+                    },
+                    {
+                        "name": "armingAway",
+                        "value": "0x0A"
+                    }
+                ],
+                "name": "IasAcePanelStatus",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "zoneBypassed",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "zoneNotBypassed",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "notAllowed",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "invalidZoneId",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "unknownZoneId",
+                        "value": "0x4"
+                    },
+                    {
+                        "name": "invalidArmDisarmCode",
+                        "value": "0x5"
+                    }
+                ],
+                "name": "IasAceBypassResult",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "stop",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "burglar",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "fire",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "emergency",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "policePanic",
+                        "value": "0x4"
+                    },
+                    {
+                        "name": "firePanic",
+                        "value": "0x5"
+                    },
+                    {
+                        "name": "emergencyPanic",
+                        "value": "0x6"
+                    }
+                ],
+                "name": "WarningMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "noStrobe",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "useStrobe",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "WarningStobe",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "systemIsArmed",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "systemIsDisarmed",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "SquawkMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "noStrobe",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "useStrobe",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "SquawkStobe",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "lowLevel",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "mediumLevel",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "highLevel",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "veryHighLevel",
+                        "value": "0x2"
+                    }
+                ],
+                "name": "SquawkLevel",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Unregistered",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "JoiningNetwork",
+                        "value": "0x1"
+                    },
+                    {
+                        "name": "JoinedNetwork",
+                        "value": "0x2"
+                    },
+                    {
+                        "name": "SubmittedRegistrationRequest",
+                        "value": "0x3"
+                    },
+                    {
+                        "name": "RegistrationRejected",
+                        "value": "0x4"
+                    },
+                    {
+                        "name": "Registered",
+                        "value": "0x5"
+                    },
+                    {
+                        "name": "RegisterationNotPossible",
+                        "value": "0x6"
+                    }
+                ],
+                "name": "AmiRegistrationState",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "NoSourceFound",
+                        "value": "0x0"
+                    },
+                    {
+                        "name": "SourceFound",
+                        "value": "0x1"
+                    }
+                ],
+                "name": "AnonymousDataState",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "DenyWrite",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "AllowWriteNormal",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "AllowWriteOfReadOnly",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "UnsupportedAttribute",
+                        "value": "0x86"
+                    },
+                    {
+                        "name": "InvalidValue",
+                        "value": "0x87"
+                    },
+                    {
+                        "name": "ReadOnly",
+                        "value": "0x88"
+                    },
+                    {
+                        "name": "InvalidDataType",
+                        "value": "0x8D"
+                    }
+                ],
+                "name": "AttributeWritePermission",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "reported",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "received",
+                        "value": "0x01"
+                    }
+                ],
+                "name": "ReportingDirection",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "PowerProfileWaitingToStart",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "PowerProfileStarted",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "EnergyPhaseRunning",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "EnergyPhaseEnded",
+                        "value": "0x04"
+                    },
+                    {
+                        "name": "EnergyPhaseWaitingToStart",
+                        "value": "0x05"
+                    },
+                    {
+                        "name": "EnergyPhaseStarted",
+                        "value": "0x06"
+                    },
+                    {
+                        "name": "PowerProfileEnded",
+                        "value": "0x07"
+                    },
+                    {
+                        "name": "ProfileReadyForScheduling",
+                        "value": "0x08"
+                    },
+                    {
+                        "name": "PowerProfileScheduled",
+                        "value": "0x09"
+                    }
+                ],
+                "name": "PowerProfileState",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Off",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "StandBy",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "Programmed",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "ProgrammedWaitingToStart",
+                        "value": "0x04"
+                    },
+                    {
+                        "name": "Running",
+                        "value": "0x05"
+                    },
+                    {
+                        "name": "Pause",
+                        "value": "0x06"
+                    },
+                    {
+                        "name": "EndProgrammed",
+                        "value": "0x07"
+                    },
+                    {
+                        "name": "Failure",
+                        "value": "0x08"
+                    },
+                    {
+                        "name": "ProgrammeInterrupted",
+                        "value": "0x09"
+                    },
+                    {
+                        "name": "Idle",
+                        "value": "0x0A"
+                    },
+                    {
+                        "name": "RinseHold",
+                        "value": "0x0B"
+                    },
+                    {
+                        "name": "Service",
+                        "value": "0x0C"
+                    },
+                    {
+                        "name": "Superfreezing",
+                        "value": "0x0D"
+                    },
+                    {
+                        "name": "Supercooling",
+                        "value": "0x0E"
+                    },
+                    {
+                        "name": "Superheating",
+                        "value": "0x0F"
+                    }
+                ],
+                "name": "ApplianceStatus",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Disabled",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "TemporarilyLockedDisabled",
+                        "value": "0x07"
+                    },
+                    {
+                        "name": "EnabledRemoteControl",
+                        "value": "0x0F"
+                    },
+                    {
+                        "name": "EnabledRemoteAndEnergyControl",
+                        "value": "0x01"
+                    }
+                ],
+                "name": "RemoteEnableFlags",
+                "type": "ENUM8"
+            },
+            {
+                "item": {
+                    "name": "IrisSymptomCode",
+                    "value": "0x20"
+                },
+                "name": "DeviceStatus2Structure",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Relative",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Absolute",
+                        "value": "0x40"
+                    }
+                ],
+                "name": "TimeEncoding",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Start",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "Stop",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "Pause",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "StartSuperfreezing",
+                        "value": "0x04"
+                    },
+                    {
+                        "name": "StopSuperfreezing",
+                        "value": "0x05"
+                    },
+                    {
+                        "name": "StartSupercooling",
+                        "value": "0x06"
+                    },
+                    {
+                        "name": "StopSupercooling",
+                        "value": "0x07"
+                    },
+                    {
+                        "name": "DisableGas",
+                        "value": "0x08"
+                    },
+                    {
+                        "name": "EnableGas",
+                        "value": "0x09"
+                    },
+                    {
+                        "name": "EnableEnergyControl",
+                        "value": "0x0A"
+                    },
+                    {
+                        "name": "DisableEnergyControl",
+                        "value": "0x0B"
+                    }
+                ],
+                "name": "CommandIdentification",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Warning1OverallPowerAboveAvailablePowerLevel",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Warning2OverallPowerAbovePowerThresholdLevel",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "Warning3OverallPowerBackBelowTheAvailablePowerLevel",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "Warning4OverallPowerBackBelowThePowerThresholdLevel",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "Warning5OverallPowerWillBePotentiallyAboveAvailablePowerLevelIfTheApplianceStarts",
+                        "value": "0x04"
+                    }
+                ],
+                "name": "WarningEvent",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "NotFullyLocked",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Locked",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "Unlocked",
+                        "value": "0x02"
+                    }
+                ],
+                "name": "DoorLockState",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Silent",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Low",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "High",
+                        "value": "0x02"
+                    }
+                ],
+                "name": "DoorLockSoundVolume",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "DeadBolt",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Magnetic",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "Mortise",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "Rim",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "Latch Bolt",
+                        "value": "0x04"
+                    },
+                    {
+                        "name": "Cylindrical",
+                        "value": "0x05"
+                    },
+                    {
+                        "name": "Tubular",
+                        "value": "0x06"
+                    },
+                    {
+                        "name": "Interconnected",
+                        "value": "0x07"
+                    },
+                    {
+                        "name": "DeadLatch",
+                        "value": "0x08"
+                    },
+                    {
+                        "name": "Other",
+                        "value": "0x09"
+                    }
+                ],
+                "name": "DoorLockType",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Open",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Closed",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "ErrorJammed",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "ErrorForcedOpen",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "ErrorUnspecified",
+                        "value": "0x04"
+                    }
+                ],
+                "name": "DoorState",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "NormalMode",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "VacationMode",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "PrivacyMode",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "NoRfLockOrUnlock",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "LocalProgrammingMode",
+                        "value": "0x04"
+                    },
+                    {
+                        "name": "PassageMode         ",
+                        "value": "0x05"
+                    }
+                ],
+                "name": "DoorLockOperatingMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "NetworkSecurity",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "ApsSecurity",
+                        "value": "0x01"
+                    }
+                ],
+                "name": "DoorLockSecurityLevel",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Available",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "OccupiedEnabled",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "OccupiedDisabled",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "NotSupported",
+                        "value": "0xFF"
+                    }
+                ],
+                "name": "DoorLockUserStatus",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Unrestricted",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "OneTimeUser",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "UserWithSchedule",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "MasterUser",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "NotSupported",
+                        "value": "0xFF"
+                    }
+                ],
+                "name": "DoorLockUserType",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Operation",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Programming",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "Alarm",
+                        "value": "0x02"
+                    }
+                ],
+                "name": "DoorLockEventType",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Keypad",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Rf",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "Manual",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "Rfid",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "Indeterminate",
+                        "value": "0xFF"
+                    }
+                ],
+                "name": "DoorLockEventSource",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Success",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "GeneralFailure",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "MemoryFull",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "DuplicateCodeError",
+                        "value": "0x03"
+                    }
+                ],
+                "name": "DoorLockSetPinOrIdStatus",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "UnknownOrMfgSpecific",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Lock",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "Unlock",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "LockInvalidPinOrId",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "LockInvalidSchedule",
+                        "value": "0x04"
+                    },
+                    {
+                        "name": "UnlockInvalidPinOrId",
+                        "value": "0x05"
+                    },
+                    {
+                        "name": "UnlockInvalidSchedule",
+                        "value": "0x06"
+                    },
+                    {
+                        "name": "OneTouchLock",
+                        "value": "0x07"
+                    },
+                    {
+                        "name": "KeyLock",
+                        "value": "0x08"
+                    },
+                    {
+                        "name": "KeyUnlock",
+                        "value": "0x09"
+                    },
+                    {
+                        "name": "AutoLock",
+                        "value": "0x0A"
+                    },
+                    {
+                        "name": "ScheduleLock",
+                        "value": "0x0B"
+                    },
+                    {
+                        "name": "ScheduleUnlock",
+                        "value": "0x0C"
+                    },
+                    {
+                        "name": "ManualLock",
+                        "value": "0x0D"
+                    },
+                    {
+                        "name": "ManualUnlock",
+                        "value": "0x0E"
+                    }
+                ],
+                "name": "DoorLockOperationEventCode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "UnknownOrMfgSpecific",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "MasterCodeChanged",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "PinAdded",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "PinDeleted",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "PinChanged",
+                        "value": "0x04"
+                    },
+                    {
+                        "name": "IdAdded",
+                        "value": "0x05"
+                    },
+                    {
+                        "name": "IdDeleted",
+                        "value": "0x06"
+                    }
+                ],
+                "name": "DoorLockProgrammingEventCode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Off",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Cool",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "Heat",
+                        "value": "0x04"
+                    }
+                ],
+                "name": "ThermostatRunningMode",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Sunday",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "Monday",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "Tuesday",
+                        "value": "0x02"
+                    },
+                    {
+                        "name": "Wednesday",
+                        "value": "0x03"
+                    },
+                    {
+                        "name": "Thursday",
+                        "value": "0x04"
+                    },
+                    {
+                        "name": "Friday",
+                        "value": "0x05"
+                    },
+                    {
+                        "name": "Saturday",
+                        "value": "0x06"
+                    }
+                ],
+                "name": "StartOfWeek",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "SetpointHoldOff",
+                        "value": "0x00"
+                    },
+                    {
+                        "name": "SetpointHoldOn",
+                        "value": "0x01"
+                    }
+                ],
+                "name": "TemperatureSetpointHold",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "WhiteGoods",
+                        "value": "0x0000"
+                    },
+                    {
+                        "name": "Dishwasher",
+                        "value": "0x5601"
+                    },
+                    {
+                        "name": "TumbleDryer",
+                        "value": "0x5602"
+                    },
+                    {
+                        "name": "WasherDryer",
+                        "value": "0x5603"
+                    },
+                    {
+                        "name": "WashingMachine",
+                        "value": "0x5604"
+                    },
+                    {
+                        "name": "Hobs",
+                        "value": "0x5E03"
+                    },
+                    {
+                        "name": "InductionHobs",
+                        "value": "0x5E09"
+                    },
+                    {
+                        "name": "Oven",
+                        "value": "0x5E01"
+                    },
+                    {
+                        "name": "ElectricalOven",
+                        "value": "0x5E06"
+                    },
+                    {
+                        "name": "RefrigeratorFreezer",
+                        "value": "0x6601"
+                    }
+                ],
+                "name": "ProductTypeId",
+                "type": "ENUM16"
+            },
+            {
+                "item": [
+                    {
+                        "name": "CompliantWithV10NotCertified",
+                        "value": "0x10"
+                    },
+                    {
+                        "name": "CompliantWithV10Certified",
+                        "value": "0x1A"
+                    }
+                ],
+                "name": "CecedSpecificationVersion",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "UtilityPrimaryMeter",
+                        "value": "0x0000"
+                    },
+                    {
+                        "name": "UtilityProductionMeter",
+                        "value": "0x0001"
+                    },
+                    {
+                        "name": "UtilitySecondaryMeter",
+                        "value": "0x0002"
+                    },
+                    {
+                        "name": "PrivatePrimaryMeter",
+                        "value": "0x0100"
+                    },
+                    {
+                        "name": "PrivateProductionMeter",
+                        "value": "0x0101"
+                    },
+                    {
+                        "name": "PrivateSecondaryMeters",
+                        "value": "0x0102"
+                    },
+                    {
+                        "name": "GenericMeter",
+                        "value": "0x0110"
+                    }
+                ],
+                "name": "MeterTypeId",
+                "type": "ENUM16"
+            },
+            {
+                "item": [
+                    {
+                        "name": "AllDataCertified",
+                        "value": "0x0000"
+                    },
+                    {
+                        "name": "OnlyInstantaneousPowerNotCertified",
+                        "value": "0x0001"
+                    },
+                    {
+                        "name": "OnlyCumulatedConsumptionNotCertified",
+                        "value": "0x0002"
+                    },
+                    {
+                        "name": "NotCertifiedData",
+                        "value": "0x0003"
+                    }
+                ],
+                "name": "DataQualityId",
+                "type": "ENUM16"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Warning",
+                        "value": "0x0100"
+                    },
+                    {
+                        "name": "Danger",
+                        "value": "0x0200"
+                    },
+                    {
+                        "name": "Failure",
+                        "value": "0x0300"
+                    }
+                ],
+                "name": "AlertStructureCategory",
+                "type": "ENUM16"
+            },
+            {
+                "item": [
+                    {
+                        "name": "Presence",
+                        "value": "0x0000"
+                    },
+                    {
+                        "name": "Recovery",
+                        "value": "0x1000"
+                    }
+                ],
+                "name": "AlertStructurePresenceRecovery",
+                "type": "ENUM16"
+            },
+            {
+                "item": {
+                    "name": "Unstructured",
+                    "value": "0x00"
+                },
+                "name": "AlertCountType",
+                "type": "ENUM8"
+            },
+            {
+                "item": [
+                    {
+                        "name": "EndOfCycle",
+                        "value": "0x01"
+                    },
+                    {
+                        "name": "TemperatureReached",
+                        "value": "0x04"
+                    },
+                    {
+                        "name": "EndOfCooking",
+                        "value": "0x05"
+                    },
+                    {
+                        "name": "SwitchingOff",
+                        "value": "0x06"
+                    },
+                    {
+                        "name": "WrongData",
+                        "value": "0x07"
+                    }
+                ],
+                "name": "EventIdentification",
+                "type": "ENUM8"
+            }
+        ],
+        "struct": [
+            {
+                "item": [
+                    {
+                        "name": "zoneId",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "zoneStatus",
+                        "type": "IasZoneStatus"
+                    }
+                ],
+                "name": "IasAceZoneStatusResult"
+            },
+            {
+                "item": [
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    },
+                    {
+                        "name": "status",
+                        "type": "Status"
+                    },
+                    {
+                        "name": "attributeType",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "attributeLocation",
+                        "type": "NO_DATA"
+                    }
+                ],
+                "name": "ReadAttributeStatusRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    },
+                    {
+                        "name": "attributeType",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "attributeLocation",
+                        "type": "NO_DATA"
+                    }
+                ],
+                "name": "WriteAttributeRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "status",
+                        "type": "Status"
+                    },
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    }
+                ],
+                "name": "WriteAttributeStatusRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "direction",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    },
+                    {
+                        "name": "attributeType",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "minimumReportingInterval",
+                        "type": "INT16U"
+                    },
+                    {
+                        "name": "maximumReportingInterval",
+                        "type": "INT16U"
+                    },
+                    {
+                        "name": "reportableChangeLocation",
+                        "type": "NO_DATA"
+                    },
+                    {
+                        "name": "timeoutPeriod",
+                        "type": "INT16U"
+                    }
+                ],
+                "name": "ConfigureReportingRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "status",
+                        "type": "Status"
+                    },
+                    {
+                        "name": "direction",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    }
+                ],
+                "name": "ConfigureReportingStatusRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "status",
+                        "type": "Status"
+                    },
+                    {
+                        "name": "direction",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    },
+                    {
+                        "name": "attributeType",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "minimumReportingInterval",
+                        "type": "INT16U"
+                    },
+                    {
+                        "name": "maximumReportingInterval",
+                        "type": "INT16U"
+                    },
+                    {
+                        "name": "reportableChangeLocation",
+                        "type": "NO_DATA"
+                    },
+                    {
+                        "name": "timeoutPeriod",
+                        "type": "INT16U"
+                    }
+                ],
+                "name": "ReadReportingConfigurationRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "direction",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    }
+                ],
+                "name": "ReadReportingConfigurationAttributeRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    },
+                    {
+                        "name": "attributeType",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "attributeLocation",
+                        "type": "NO_DATA"
+                    }
+                ],
+                "name": "ReportAttributeRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    },
+                    {
+                        "name": "attributeType",
+                        "type": "INT8U"
+                    }
+                ],
+                "name": "DiscoverAttributesInfoRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    },
+                    {
+                        "name": "attributeType",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "attributeAccessControl",
+                        "type": "INT8U"
+                    }
+                ],
+                "name": "ExtendedDiscoverAttributesInfoRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    },
+                    {
+                        "name": "indicator",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "indicies",
+                        "type": "INT16U",
+                        "array": "true"
+                    }
+                ],
+                "name": "ReadStructuredAttributeRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    },
+                    {
+                        "name": "indicator",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "indicies",
+                        "type": "INT16U",
+                        "array": "true"
+                    },
+                    {
+                        "name": "attributeType",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "attributeLocation",
+                        "type": "NO_DATA"
+                    }
+                ],
+                "name": "WriteStructuredAttributeRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "status",
+                        "type": "Status"
+                    },
+                    {
+                        "name": "attributeId",
+                        "type": "ATTRIBUTE_ID"
+                    },
+                    {
+                        "name": "indicator",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "indicies",
+                        "type": "INT16U",
+                        "array": "true"
+                    }
+                ],
+                "name": "WriteStructuredAttributeStatusRecord"
+            },
+            {
+                "item": [
+                    {
+                        "name": "attributeType",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "attributeLocation",
+                        "type": "NO_DATA"
+                    }
+                ],
+                "name": "SceneExtensionAttributeInfo"
+            },
+            {
+                "item": [
+                    {
+                        "name": "clusterId",
+                        "type": "CLUSTER_ID"
+                    },
+                    {
+                        "name": "length",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "value",
+                        "type": "INT8U"
+                    }
+                ],
+                "name": "SceneExtensionFieldSet"
+            },
+            {
+                "item": [
+                    {
+                        "name": "blockThreshold",
+                        "type": "ENUM8"
+                    },
+                    {
+                        "name": "priceControl",
+                        "type": "BITMAP8"
+                    },
+                    {
+                        "name": "blockPeriodStartTime",
+                        "type": "UTC_TIME"
+                    },
+                    {
+                        "name": "blockPeriodDurationMinutes",
+                        "type": "INT24U"
+                    },
+                    {
+                        "name": "fuelType",
+                        "type": "ENUM8"
+                    },
+                    {
+                        "name": "standingCharge",
+                        "type": "INT32U"
+                    }
+                ],
+                "name": "BlockThreshold"
+            },
+            {
+                "item": [
+                    {
+                        "name": "contentId",
+                        "type": "INT16U"
+                    },
+                    {
+                        "name": "statusFeedback",
+                        "type": "Status"
+                    }
+                ],
+                "name": "Notification"
+            },
+            {
+                "item": [
+                    {
+                        "name": "neighbor",
+                        "type": "IEEE_ADDRESS"
+                    },
+                    {
+                        "name": "x",
+                        "type": "INT16S"
+                    },
+                    {
+                        "name": "y",
+                        "type": "INT16S"
+                    },
+                    {
+                        "name": "z",
+                        "type": "INT16S"
+                    },
+                    {
+                        "name": "rssi",
+                        "type": "INT8S"
+                    },
+                    {
+                        "name": "numberRssiMeasurements",
+                        "type": "INT8U"
+                    }
+                ],
+                "name": "NeighborInfo"
+            },
+            {
+                "item": [
+                    {
+                        "name": "uid",
+                        "type": "INT16U"
+                    },
+                    {
+                        "name": "nickname",
+                        "type": "CHAR_STRING"
+                    }
+                ],
+                "name": "ChatParticipant"
+            },
+            {
+                "item": [
+                    {
+                        "name": "cid",
+                        "type": "INT16U"
+                    },
+                    {
+                        "name": "name",
+                        "type": "CHAR_STRING"
+                    }
+                ],
+                "name": "ChatRoom"
+            },
+            {
+                "item": [
+                    {
+                        "name": "uid",
+                        "type": "INT16U"
+                    },
+                    {
+                        "name": "address",
+                        "type": "DATA16"
+                    },
+                    {
+                        "name": "endpoint",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "nickname",
+                        "type": "CHAR_STRING"
+                    }
+                ],
+                "name": "NodeInformation"
+            },
+            {
+                "item": [
+                    {
+                        "name": "energyPhaseId",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "scheduledTime",
+                        "type": "INT16U"
+                    }
+                ],
+                "name": "ScheduledPhase"
+            },
+            {
+                "item": [
+                    {
+                        "name": "energyPhaseId",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "macroPhaseId",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "expectedDuration",
+                        "type": "INT16U"
+                    },
+                    {
+                        "name": "peakPower",
+                        "type": "INT16U"
+                    },
+                    {
+                        "name": "energy",
+                        "type": "INT16U"
+                    },
+                    {
+                        "name": "maxActivationDelay",
+                        "type": "INT16U"
+                    }
+                ],
+                "name": "TransferredPhase"
+            },
+            {
+                "item": [
+                    {
+                        "name": "powerProfileId",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "energyPhaseId",
+                        "type": "INT8U"
+                    },
+                    {
+                        "name": "powerProfileRemoteControl",
+                        "type": "BOOLEAN"
+                    },
+                    {
+                        "name": "powerProfileState",
+                        "type": "ENUM8"
+                    }
+                ],
+                "name": "PowerProfileRecord"
+            }
+        ]
+    }
+}

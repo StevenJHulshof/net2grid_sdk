@@ -1,0 +1,52 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>getDataTypeAdFromName(name)</h1>
+	<p>The <i class="active-link" ui-sref="getDataTypeAdFromName">getDataTypeAdFromName(name)</i> function returns the data type analog/discrete tag as a string based on the data type name.</p>
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>name</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>The name string of a data type.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>ad</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>Return 'D' if data type is discrete, 'A' if analog and '-' if none of these.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(utilityService) {
+
+	var adType = utilityService.getDataTypeAdFromName('INT24U');
+});</code></pre>
+	
+	</div>
+</div>

@@ -1,0 +1,68 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="sdk"></button>
+		<br>
+		<br>
+		<p><i class="active-link" ui-sref="sdk">SDK</i> /</p>
+	</div>
+	<div id="content">
+	<h1>net2gridApiModule</h1>
+	<p>The <i class="active-link" ui-sref="net2gridApiModule">net2gridApiModule</i> can be injected into your main application module. Doing this gives you acces to all the services available in the 
+	<i class="active-link" ui-sref="net2gridApiModule">net2gridApiModule</i>.</p>
+
+	<h2>Content</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="userService">userService [WAN only]</td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Service handling the user data, SmartBridge EUI and access token.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="ipAddressService">ipAddressService [LAN only]</td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Service handling the IP address.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="utilityService">utilityService</td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Service handling all utility functions.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="generalDevicesService">generalDevicesService</td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Service handling all general devices.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="iasDevicesService">iasDevicesService</td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Service handling Intruder Alarm System (IAS) devices.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Service handling radio frequency plugs.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="zigbeeLutService">zigbeeLutService</td>      
+				<td><span class="label label-info">Service</span></td>
+				<td>Service handling all look up tables used in the Net2Grid SDK.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>	
+<pre><code><b>var</b> myAppModule = angular.module('myAppModule', [
+
+	'net2gridApiModule'
+]);</code></pre>				
+	
+	</div>
+</div>
+	

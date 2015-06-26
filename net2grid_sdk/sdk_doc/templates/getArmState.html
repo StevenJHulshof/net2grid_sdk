@@ -1,0 +1,36 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="iasDevicesService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="iasDevicesService">iasDevicesService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>getArmState()</h1>
+	<p>Returns the global arming state of all the IAS-sensors in the ZigBee network. Make sure to set the global arming state before calling this function.</p>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>armState</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>The global arming state</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function($scope, iasDevicesService) {
+
+	iasDevicesService.setArmState('12341234', 'day');
+	
+	$scope.globalArmState = iasDevicesService.getArmState();
+});</code></pre>
+	</div>
+</div>

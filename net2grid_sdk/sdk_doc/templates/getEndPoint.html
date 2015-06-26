@@ -1,0 +1,67 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>getEndPoint(clusterId, endPoints)</h1>
+	<p>The <i class="active-link" ui-sref="getEndPoint">getEndPoint(clusterId, endPoints)</i> function is used to determine whether a cluster is available in the specified endpoints. The return value contains 
+	both the boolean check and the endpoint which contains the cluster. This function is used in the <i class="active-link" ui-sref="generalDevicesService">generalDevicesService</i> 
+	to check whether a cluster is available in the virtual device when making a HTTP call.</p>
+	
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>clusterId</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The numeric identification code of a cluster.</td>
+			</tr>
+			<tr>
+				<td>endPoints</td>      
+				<td><span class="label label-royal">Array</span></td>
+				<td>The endpoint array available in a virtual device.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>buf</td>      
+				<td><span class="label label-royal">Array</span></td>
+				<td>An array with an index of 2. The first index contains a boolean check whether the cluster is available in de specified endpoints. 
+				The second index is the number of the endpoint which holds the specified cluster.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function($scope, utilityService, generalDevicesService, zigbeeLutService) {
+
+	$scope.$on('generalDevices.update', function(event) {
+		
+		$scope.generalDevices = generalDevicesService.getGeneralDevices();
+	});
+	
+	var basicCluster = zigbeeLutService.getClusterLut().Basic;
+	
+	var buf = utilityService.getEndPoint(basicCluster, generalDevices.endPoints);
+});</code></pre>	
+	</div>
+</div>

@@ -1,0 +1,86 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="generalDevices"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="generalDevicesService">generalDevicesService</i> / 
+		<i ui-sref="getGeneralDevices">getGeneralDevices()</i> / <i ui-sref="generalDevices">generalDevices</i> /</p>
+	</div>
+	<div id="content">
+		<h1>writeCommand(command, args)</h1>
+		<p>The <i class="active-link" ui-sref="writeCommand">writeCommand(command, args)</i> method can be used to send cluster specific commands to the actual devices.</p>
+		
+		<p>On a successful call, the return value is a promise containing further information about the call. When failed, an error message will be printed in the browser console, 
+		containing potential data and the HTTP status.</p>
+		
+		<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>command</td>      
+				<td><span class="label label-default">Object</span></td>
+				<td>The command object.</td>
+			</tr>
+			<tr>
+				<td>args</td>      
+				<td><span class="label label-royal">Array</span></td>
+				<td>Array of arguments.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>promise</td>      
+				<td><span class="label label-default">Object</span></td>
+				<td>Command name, command ID, cluster ID, status.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(ipAddressService, generalDevicesService, zigbeeLutService) {
+
+	ipAddressService.setIp('123.456.7.89');
+
+	generalDevicesService.setupGeneralDevices();
+	
+	$scope.generalDevices;
+	$scope.promise;
+	
+	$scope.$on('generalDevices.update', function(event) {
+		
+		$scope.generalDevices = generalDevicesService.getGeneralDevices();
+	});
+
+	// Sets philips hue lamp to red, transition time = 4 seconds
+	$scope.hueToRed = function() {
+	
+		var colorControlCluster = zigbeeLutService.getClusterLut().ColorControl;		
+		var moveToColorCommand = zigbeeLutService.getMoveToColorCommand();
+		
+		if($scope.generalDevices[0].checkCluster(ColorControl)) {
+		
+			$scope.generalDevices[0].writeCommand(moveToColorCommand, [0xBE00, 0x4000, 40]).then(function(promise) {
+			
+				$scope.promise = promise;
+			});
+		}
+	}
+});</code></pre>
+	</div>
+</div>

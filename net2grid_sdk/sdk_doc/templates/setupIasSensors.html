@@ -1,0 +1,22 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="iasDevicesService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="iasDevicesService">iasDevicesService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>setupIasSensors()</h1>
+	<p>This function creates a list of virtual IAS-sensors corresponding to the actual sensors in the ZigBee network.</p>
+	<p>Make sure to set te IP address before calling the <i class="active-link" ui-sref="setupIasSensors">setupIasSensors()</i> function. The function will broadcast a 'sensorDevices.update' event which can be watched before calling the 
+	<i class="active-link" ui-sref="getSensorDevices">getSensorDevices()</i> function. When failed, an error message will be printed in the browser console, 
+		containing potential data and the HTTP status.</p>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(ipAddressService, iasDevicesService) {
+
+	ipAddressService.setIp('123.456.7.89');
+
+	iasDevicesService.setupIasSensors();
+});</code></pre>
+</div>
+</div>

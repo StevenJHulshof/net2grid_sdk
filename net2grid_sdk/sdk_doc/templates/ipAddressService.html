@@ -1,0 +1,44 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="net2gridApiModule"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> /</p>
+	</div>
+	<div id="content">
+	<h1>ipAddressService [LAN only]</h1>
+	<p>The <i class="active-link" ui-sref="ipAddressService">ipAddressService</i> is used to store the IP-address of the NET2GRID SmartBridge. Initializing the IP-address 
+	is needed before running the setup functions in the <i class="active-link" ui-sref="generalDevicesService">generalDevicesService</i> and the 
+	<i class="active-link" ui-sref="iasDevicesService">iasDevicesService</i>. The <i class="active-link" ui-sref="ipAddressService">ipAddressService</i> can be injected 
+	into any other service, controller or directive.</p>
+	
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="getIp">getIp()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns stored IP address.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="setIp">setIp(ip)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Changes the stored IP address, used to address the ZGD.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(ipAddressService) {
+
+	//Code here to access the ipAddressService
+});
+</code></pre>
+	</div>
+</div>

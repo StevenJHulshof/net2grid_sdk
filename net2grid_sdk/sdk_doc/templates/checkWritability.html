@@ -1,0 +1,56 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>checkWritability(attributes)</h1>
+	<p>The <i class="active-link" ui-sref="checkWritability">checkWritability(attributes)</i> function can be used to check whether attributes are writable. This function is used in the 
+	<i class="active-link" ui-sref="writeAttributes">writeAttributes(clusterId, attributes, value)</i> method.</p>
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>attributes</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-default">Object</span></td>
+				<td>Array of attribute objects.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>writability</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-danger">number</span><br><span class="label label-success">boolean</span></td>
+				<td>When returning false, the second index of the array contains the attribute identification code.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(zigbeeLutService, utilityService) {
+
+	var onOffAttribute = zigbeeLutService.getOnOffAttribute();
+	var zclVersionAttribute = zigbeeLutService.getZclVersionAttribute();
+	
+	var writability = utilityService.checkWritability([onOffAttribute, zclVersionAttribute]);
+});</code></pre>
+	
+	</div>
+</div>

@@ -1,0 +1,19 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="userService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="userService">userService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>postTokenRequest()</h1>
+	<p>The <i class="active-link" ui-sref="postTokenRequest">postTokenRequest()</i> function posts a request to the server to obtain the access token.
+	The access token is stored into the <i class="active-link" ui-sref="userService">userService</i> and can be retrieved with the <i class="active-link" ui-sref="getToken">getToken()</i> function.</p>
+
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(userService) {
+
+	userService.postTokenRequest();
+});</code></pre>
+	</div>
+</div>

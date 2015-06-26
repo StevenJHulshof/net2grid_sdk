@@ -1,0 +1,36 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="userService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="userService">userService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>getEui()</h1>
+	<p>The <i class="active-link" ui-sref="getEui">getEui()</i> function returns the decimal value of the EUI stored in the 
+	<i class="active-link" ui-sref="userService">userService</i>.</p>
+
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>eui</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The decimal value of the SmartBridge EUI.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(userService) {
+
+	var euiDec = userService.getEui();
+});</code></pre>
+	</div>
+</div>

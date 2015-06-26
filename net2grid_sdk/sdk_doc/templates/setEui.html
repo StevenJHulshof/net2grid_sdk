@@ -1,0 +1,36 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="userService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="userService">userService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>setEui(euiStr)</h1>
+	<p>The <i class="active-link" ui-sref="setEui">setEui(euiStr)</i> function stores the EUI of the used SmartBridge into the 
+	<i class="active-link" ui-sref="userService">userService</i>.</p>
+
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>euiStr</td>      
+				<td><span class="label label-default">string</span></td>
+				<td>Hexadecimal EUI string.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(userService) {
+
+	userService.setEui("84df0c0000000004");
+});</code></pre>
+	</div>
+</div>

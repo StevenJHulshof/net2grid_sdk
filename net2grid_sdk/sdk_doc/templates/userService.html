@@ -1,0 +1,62 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="net2gridApiModule"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> /</p>
+	</div>
+	<div id="content">
+	<h1>userService [WAN only]</h1>
+	<p>The <i class="active-link" ui-sref="userService">userService</i> is used for storing user data, the SmartBridge EUI and to request the access token from the server.
+	The <i class="active-link" ui-sref="userService">userService</i> can be injected into any other service, controller or directive.</p>
+	
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="setUserData">setUserData(clientId, clientSecret, userName, passWord)()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Stores user data into service.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getUserData">getUserData()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns user data.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getToken">getToken()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns token from service.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="postTokenRequest">postTokenRequest()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Post token request to server.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="setEui">setEui(euiStr)</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Stores EUI into service.</td>
+			</tr>
+			<tr>
+				<td class="active-link" ui-sref="getEui">getEui()</td>      
+				<td><span class="label label-primary">Function</span></td>
+				<td>Returns EUI.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(userService) {
+
+	//Code here to access the userService
+});
+</code></pre>
+	</div>
+</div>

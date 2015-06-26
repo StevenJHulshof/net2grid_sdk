@@ -1,0 +1,35 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="getStatusLut"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="zigbeeLutService">zigbeeLutService</i> / 
+		<i ui-sref="getStatusLut">getStatusLut()</i> /</p>
+	</div>
+	<div id="content">
+	<h1>statusLut</h1>
+	<p>The <i class="active-link" ui-sref="statusLut">statusLut</i> object content.</p>
+	<h2>Content</h2>
+	<table class="table table-bordered" ng-repeat="status in statusLut track by $index">
+		<thead>
+			<tr >
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>name</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>{{status.name}}</td>
+			</tr>
+			<tr>
+				<td>value</td>
+				<td><span class="label label-danger">number</span></td>
+				<td>{{status.value}}</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</div>

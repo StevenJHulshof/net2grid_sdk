@@ -1,0 +1,109 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="functionsCommands"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="zigbeeLutService">zigbeeLutService</i> / 
+		<i ui-sref="functionsCommands">get{{content.nameFun}}Command()</i> /</p>
+	</div>
+	<div id="content">
+	<h1>{{content.nameObj}}Command</h1>
+	<p>The <i class="active-link" ui-sref="objectsCommands" ng-click="changeCommandContent(content.label)">{{content.nameObj}}Command</i> object content.
+	<h2>Content</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr >
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>commandClusterId</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>{{content.commandClusterId}}</td>
+			</tr>
+			<tr>
+				<td>server</td>
+				<td><span class="label label-success">boolean</span></td>
+				<td>{{content.server}}</td>
+			</tr>
+			<tr>
+				<td>commandId</td>
+				<td><span class="label label-danger">number</span></td>
+				<td>{{content.commandId}}</td>
+			</tr>
+			<tr>
+				<td>name</td>
+				<td><span class="label label-warning">string</span></td>
+				<td>{{content.name}}</td>
+			</tr>
+			<tr>
+				<td>mandatory</td>
+				<td><span class="label label-success">boolean</span></td>
+				<td>{{content.mandatory}}</td>
+			</tr>
+			<tr>
+				<td>arg</td>
+				<td><span class="label label-royal">Array</span><br><span class="label label-default">Object</span></td>
+				<td>
+					<table ng-repeat="a in content.arg track by $index" class="table table-bordered">
+						<thead>
+							<tr >
+								<th>Name</th>		
+								<th>Type</th>
+								<th>Value</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>name</td>      
+								<td><span class="label label-warning">string</span></td>
+								<td>{{content.arg[a.label].name}}</td>
+							</tr>
+							<tr>
+								<td>type</td>
+								<td><span class="label label-warning">string</span></td>
+								<td>{{content.arg[a.label].type}}</td>
+							</tr>
+							<tr>
+								<td>array</td>
+								<td><span class="label label-success">boolean</span></td>
+								<td>{{content.arg[a.label].array}}</td>
+							</tr>
+							<tr>
+								<td>arg</td>
+								<td><span class="label label-royal">Array</span><br><span class="label label-default">Object</span></td>
+								<td>
+									<table ng-repeat="i in a.arg track by $index" class="table table-bordered">
+										<thead>
+											<tr >
+												<th>Name</th>		
+												<th>Type</th>
+												<th>Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>name</td>      
+												<td><span class="label label-warning">string</span></td>
+												<td>{{i.name}}</td>
+											</tr>
+											<tr>
+												<td>type</td>
+												<td><span class="label label-warning">string</span></td>
+												<td>{{i.type}}</td>
+											</tr>
+										</tbody>
+									</table
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</div>

@@ -1,0 +1,50 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="sensorDevices"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="iasDevicesService">iasDevicesService</i> / 
+		<i ui-sref="getSensorDevices">getSensorDevices()</i> / <i ui-sref="sensorDevices">sensorDevices</i> /</p>
+	</div>
+	<div id="content">
+		<h1>getMask()</h1>
+		<p>Returns the arming state mask of an individual IAS-sensor.</p>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>maskStr</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>String containing mask data.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function($scope, ipAddressService, iasDevicesService) {
+
+	ipAddressService.setIp('123.456.7.89');
+
+	iasDevicesService.setupIasSensors();
+	
+	$scope.sensorDevices;
+	$scope.mask;
+
+	$scope.$on('sensorDevices.update', function(event) {
+	
+		$scope.sensorDevices = iasDevicesService.getSensorDevices();
+	});
+	
+	$scope.getMask = function() {
+	
+		$scope.mask = $scope.sensorDevices[0].getMask();
+	}
+});</code></pre>
+	</div>
+</div>

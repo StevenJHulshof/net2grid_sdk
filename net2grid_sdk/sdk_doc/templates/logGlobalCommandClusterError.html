@@ -1,0 +1,38 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>logGlobalCommandClusterError(clusterId)</h1>
+	<p>The <i class="active-link" ui-sref="logGlobalCommandClusterError">logGlobalCommandClusterError(clusterId)</i> function is used to print the missing cluster error to the browser console.
+	This function is used in the <i class="active-link" ui-sref="generalDevicesService">generalDevicesService</i> for logging the missing cluster error.</p>
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>clusterId</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The numeric identification code of a cluster.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(utilityService, zigbeeLutService) {
+
+	var basicCluster = zigbeeLutService.getClusterLut().Basic;
+	
+	utilityService.logGlobalCommandClusterError(basicCluster);	
+});</code></pre>
+	
+	</div>
+</div>

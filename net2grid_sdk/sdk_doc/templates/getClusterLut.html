@@ -1,0 +1,35 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="zigbeeLutService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="zigbeeLutService">zigbeeLutService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>getClusterLut()</h1>
+	<p>The <i class="active-link" ui-sref="getClusterLut">getClusterLut()</i> function returns the <i class="active-link" ui-sref="clusterLut">clusterLut</i> object.</p>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="active-link" ui-sref="clusterLut">clusterLut</td>      
+				<td><span class="label label-default">Object</span></td>
+				<td>Contains all clusters with their cluster id.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function($scope, zigbeeLutService) {
+
+	$scope.clusterLut = zigbeeLutService.getClusterLut();
+	$scope.basicCluster = $scope.clusterLut.Basic;
+});</code></pre>
+	</div>
+</div>

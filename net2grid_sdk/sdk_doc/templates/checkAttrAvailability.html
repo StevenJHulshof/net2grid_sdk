@@ -1,0 +1,67 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>checkAttrAvailability(clusterId, attributes)</h1>
+	<p>The <i class="active-link" ui-sref="checkAttrAvailability">checkAttrAvailability(clusterId, attributes)</i> function determines whether the specified attributes are available in the specified cluster.</p>	
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>clusterId</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The numeric identification code of a cluster.</td>
+			</tr>
+			<tr>
+				<td>attributes</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-default">Object</span></td>
+				<td>The array containing the attribute objects.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>check</td>      
+				<td><span class="label label-success">boolean</span></td>
+				<td>Returns true when the attributes are present in the specified cluster.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example Code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function($log, utilityService, zigbeeLutService) {
+
+	var basicCluster = zigbeeLutService.getClusterLut().Basic;
+	var zclVersionAttribute = zigbeeLutService.getZclVersionAttribute();
+	var manufacturerNameAttribute = zigbeeLutService.getManufacturerNameAttribute();
+	
+	if(utilityService.checkAttrAvailability(basicCluster, [zclVersionAttribute, manufacturerNameAttribute])) {
+	
+		// Do something
+	}
+	else {
+	
+		$log.error("Chosen Cluster ID and attribute input do not match!");
+	}
+});</code></pre>
+	</div>
+</div>

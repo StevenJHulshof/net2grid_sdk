@@ -1,0 +1,52 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>getDataTypeInvalidNumber(id)</h1>
+	<p>The <i class="active-link" ui-sref="getDataTypeInvalidNumber">getDataTypeInvalidNumber(id)</i> function returns the invalid number of a data type based on its identification code. </p>
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>id</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The numeric identification code of the data type.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>invalidNumber</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The invalid number of the data type.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(utilityService) {
+
+	var invalidNum = utilityService.getDataTypeInvalidNumber(0x22); //ID of INT24U
+});</code></pre>
+	
+	</div>
+</div>

@@ -1,0 +1,37 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="ipAddressService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="ipAddressService">ipAddressService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>setIp(ip)</h1>
+	<p>The <i class="active-link" ui-sref="setIp">setIp(ip)</i> function is used to store the IP-address of the NET2GRID SmartBridge into the 
+	<i class="active-link" ui-sref="ipAddressService">ipAddressService</i>. This function must be called prior to using the <i class="active-link" ui-sref="generalDevicesService">generalDevicesService</i>, 
+	<i class="active-link" ui-sref="iasDevicesService">iasDevicesService</i> and the <i class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i>.</p>
+
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>ip</td>      
+				<td><span class="label label-warning">string</span></td>
+				<td>New IP address.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(ipAddressService) {
+
+	ipAddressService.setIp('123.456.7.89');
+});</code></pre>
+	</div>
+</div>

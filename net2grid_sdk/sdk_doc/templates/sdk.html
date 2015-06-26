@@ -1,0 +1,168 @@
+<div>
+	<div id="navigation">
+		
+	</div>
+	<div id="content">
+		<h1>SDK</h1>
+		
+		<p>This Software Development Kit is used to simplify the development of mobile applications used in combination with the NET2GRID SmartBridge.
+		It has simplified the ZigBee commands into easy to use functions, so the app developer will not have to know each and every specification of the ZigBee cluster library.
+		This SDK is only compatible with the framework AngularJS, so an understanding of this framework is recommended before using the NET2GRID SDK.</p>
+		
+		<p>This documentation will explain the details of the design of the NET2GRID SDK and how to use it, alongside with references to the functions, objects en services present in this SDK.</p>
+		
+		<h2>Design</h2>
+		
+		<p>The NET2GRID SDK is seperated into two main components. The first component is a service where all the essential ZigBee specifications are stored. 
+		These specifications are in the form of so called look up tables (LUT). The second component contains the actual main libraries used by the app developer. These main libraries will use 
+		the information stored in the first component to access the ZigBee specifications and is categorized as followed:</p>
+		<ul>
+			<li>General devices.</li>
+			<li>Intruder alarms systems (IAS).</li>
+			<li>Radio frequency devices. (RF-devices)</li>		
+		</ul>
+		<p>The image below shows the global conceptual design of the NET2GRID SDK.</p> 
+		<img src="images/SDK conceptual design.png" alt="SDK Conceptual Design" style="width:409px;height:358;"> 
+		<h3>Modularization</h3>
+		<p>To make this concept compatible with the AngularJS framework, a modular construction is built that holds all the services of the NET2GRID SDK. This module, the 
+		<i class="active-link" ui-sref="net2gridApiModule">net2gridApiModule</i> can be injected into your main application module to gain access to all the services available in the NET2GRID SDK.
+		The list below shows the content of the <i class="active-link" ui-sref="net2gridApiModule">net2gridApiModule</i>.</p>
+		<ul>
+			<br><li><span class="active-link" ui-sref="zigbeeLutService">zigbeeLutService</span><br>
+			This AngularJS service contains the ZigBee cluster library, and can be seen as the first component of the NET2GRID SDK.</li>
+			<br><li><span class="active-link" ui-sref="ipAddressService">ipAddressService</span><br>
+			The three main libraries all need to have access to the IP-address of the SmartBridge, for this reason a seperate service exists
+			containing functions to modify the used IP-address.</li>
+			<br><li><span class="active-link" ui-sref="utilityService">utilityService</span><br>
+			This service contains some utility functions. Most of these functions are used to build the three main libraries, but are accessible to the app developer.</li>	
+			<br><li><span class="active-link" ui-sref="generalDevicesService">generalDevicesService</span><br>
+			The <i class="active-link" ui-sref="generalDevicesService">generalDevicesService</i> is used to control all devices in the ZigBee network, with the exception of the IAS-devices and the RF-devices.</li>
+			<br><li><span class="active-link" ui-sref="iasDevicesService">iasDevicesService</span><br>
+			The <i class="active-link" ui-sref="iasDevicesService">iasDevicesService</i> is used to control al IAS-devices. These devices consists of IAS-sensors and IAS-warningdevices.</li>
+			<br><li><span class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</span><br>
+			The <i class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i> is used to control the RF-devices. This version only supports radio frequency controlled SmartPlugs.</li><br>					
+		</ul>
+		<h3>General devices</h3>
+		<p>This library contains all devices which can be controlled using the NET2GRID SmartBridge. The only exceptions are the IAS and the RF-devices. The IAS is using different calls from the NET2GRID REST API, 
+		and the RF-devices are not even controlled by the ZigBee network. This is also the reason why de RF-devices are not connected with the ZigBee specification component. The general devices library is available
+		in the <i class="active-link" ui-sref="generalDevicesService">generalDevicesService</i>.</p>
+		
+		<p>The main functionality of the general devices library, is to create a list of virtual devices corresponding with the actual devices available on the ZigBee network. This list can be 
+		created by calling the setup function <i class="active-link" ui-sref="setupGeneralDevices">setupGeneralDevices()</i>. A virtual device has a list of methods that can be used to address the actual devices.
+		Besides the <i class="active-link" ui-sref="setupGeneralDevices">setupGeneralDevices()</i> there are three more functions available for the app developer. Below a list with all the features of the 
+		<i class="active-link" ui-sref="generalDevicesService">generalDevicesService</i>.</p>
+		<ul>
+			<br><li><span class="active-link" ui-sref="logAttributeContent">logAttributeContent(attribute)</span><br>
+			Every attribute in the ZigBee cluster library has its own data. This data contains the name of the attribute, data type of the value, attribute identification number and whether the 
+			attribute is writable and mandatory. This function prints the data into the browser console and can be used as a development tool.</li>
+			<br><li><span class="active-link" ui-sref="logCommandContent">logCommandContent(command)</span><br>
+			The <i class="active-link" ui-sref="logCommandContent">logCommandContent(command)</i> function is basically the same as the <i class="active-link" ui-sref="logAttributeContent">
+			logAttributeContent(attribute)</i> function, only this one prints the command data into the console. This function can also be used as a development tool.</li>
+			<br><li><span class="active-link" ui-sref="setupGeneralDevices">setupGeneralDevices()</span><br>
+			As stated before, this function will scan the ZigBee network for devices and creates virtual duplicates which the app developer can use to control the actual devices.</li>
+			<br><li><span class="active-link" ui-sref="getGeneralDevices">getGeneralDevices()</span><br>
+			Returns the general devices list when called by the developer. Make sure to run the <i class="active-link" ui-sref="setupGeneralDevices">setupGeneralDevices()</i> function before 
+			calling the <i class="active-link" ui-sref="getGeneralDevices">getGeneralDevices()</i> function</li>
+			<ul>
+				<br><li><span class="active-link" ui-sref="generalDevices">generalDevices</span><br>
+				The virtual devices created by the <i class="active-link" ui-sref="setupGeneralDevices">setupGeneralDevices()</i> function</li>
+				<ul>
+					<br><li><span class="active-link" ui-sref="logAvailableAttributes">logAvailableAttributes()</span><br>
+					The developer can call this method to print a list in the browser console of the common available attributes of the clusters present in the virtual device. To specify the attribute set of 
+					the device, use the <i class="active-link" ui-sref="discoverAttributes">discoverAttributes(clusterId)</i> method. The <i class="active-link" ui-sref="logAvailableAttributes">logAvailableAttributes()</i> 
+					method can be used as a development tool.</li>
+					<br><li><span class="active-link" ui-sref="logAvailableCommands">logAvailableCommands()</span><br>
+					This method does the same as the <i class="active-link" ui-sref="logAvailableAttributes">logAvailableAttributes()</i> method, but prints the common available commands of 
+					the clusters present in the virtual device. This method can also be used as a development tool.</li>
+					<br><li><span class="active-link" ui-sref="logDeviceInfo">logDeviceInfo()</span><br>
+					The <i class="active-link" ui-sref="logDeviceInfo">logDeviceInfo()</i> method will print information about the virtual device in the browser console. This method can also be used as a development tool.</li>
+					<br><li><span class="active-link" ui-sref="checkCluster">checkCluster(clusterId)</span><br>
+					This method will check whether the input cluster parameter is available in the virtual device. Useful for checking the functionality of the device.</li>
+					<br><li><span class="active-link" ui-sref="readAttributes">readAttributes(clusterId, attributes)</span><br>
+					This method can be used to read the actual value of one or multiple attributes within a device.</li>
+					<br><li><span class="active-link" ui-sref="writeCommand">writeCommand(command, args)</span><br>
+					The <i class="active-link" ui-sref="writeCommand">writeCommand(command, args)</i> method can be used to send cluster specific commands to the actual devices.</li>
+					<br><li><span class="active-link" ui-sref="writeAttributes">writeAttributes(clusterId, attributes, value)</span><br>
+					If an attribute is writable, the <i class="active-link" ui-sref="writeAttributes">writeAttributes(clusterId, attributes, value)</i> method can be used to 
+					directly write values in these attributes.</li>
+					<br><li><span class="active-link" ui-sref="discoverAttributes">discoverAttributes(clusterId)</span><br>
+					For a more specific attribute list of a device, the <i class="active-link" ui-sref="discoverAttributes">discoverAttributes(clusterId)</i> method can be called.
+					This method can only return an attribute list of one cluster at a time.</li>
+					<br><li><span class="active-link" ui-sref="configureReportingSend">configureReportingSend(clusterId, attributes, timeouts)</span><br>
+					This method can be used if the developer is intending to send reports to the target device.</li>
+					<br><li><span class="active-link" ui-sref="configureReportingReceive">configureReportingReceive(clusterId, attributes, minInterval, maxInterval, reportableChange)</span><br>
+					This method can be used if the developer wishes to receive reports from the target device.</li>
+					<br><li><span class="active-link" ui-sref="readReportingConfiguration">readReportingConfiguration(clusterId, attributes, direction)</span><br>
+					The <i class="active-link" ui-sref="readReportingConfiguration">readReportingConfiguration(clusterId, attributes, direction)</i> method can be used if the developer wants to know 
+					the details of the reporting configuration of an attribute.</li><br>
+				</ul>
+			</ul>
+		</ul>
+		<p>More details about the functions, objects and methods are available further in the documentation. The image below shows the dependency structure of the 
+		<i class="active-link" ui-sref="generalDevicesService">generalDevicesService</i>.</p>
+		<img src="images/General devices dependencies.png" alt="General devices dependencies" style="width:729px;height:1498px;"> 
+		<h3>Intruder alarm systems</h3>
+		<p>The IAS library is used for setting up and controlling IAS-sensors. Because the IAS library uses different calls in the NET2GRID REST API, the IAS library has been seperated from 
+		the general devices library. For security reasons, a passcode must be sent when making calls to IAS-sensors in the ZigBee network. The <i class="active-link" ui-sref="iasDevicesService">iasDevicesService</i> 
+		allows for modifying the passcode, changing the global arming state of the sensors and the arming state of the individual sensors. </p>
+		
+		<p>The <i class="active-link" ui-sref="iasDevicesService">iasDevicesService</i> has, like the <i class="active-link" ui-sref="generalDevicesService">generalDevicesService</i>, a setup function which creates
+		a list of virtual sensors. The features of the <i class="active-link" ui-sref="iasDevicesService">iasDevicesService</i> are listed down below.</p>
+		<ul>
+			<br><li><span class="active-link" ui-sref="getCode">getCode()</span><br>
+			Returns the passcode stored in the <i class="active-link" ui-sref="iasDevicesService">iasDevicesService</i>.</li>
+			<br><li><span class="active-link" ui-sref="setCode">setCode(oldCode, newCode)</span><br>
+			Changes the passcode of the Intruder Alarm System. This code will be used when sending commands to the IAS-sensors in the ZigBee network.</li>
+			<br><li><span class="active-link" ui-sref="getArmState">getArmState()</span><br>
+			Returns the global arming state of all the IAS-sensors in the ZigBee network.</li>
+			<br><li><span class="active-link" ui-sref="setArmState">setArmState(code, mode)</span><br>
+			Changes the global arming state of all the IAS-sensors in the ZigBee network.</li>
+			<br><li><span class="active-link" ui-sref="setupIasSensors">setupIasSensors()</span><br>
+			This function creates a list of virtual IAS-sensors corresponding to the actual sensors in the ZigBee network.</li>
+			<br><li><span class="active-link" ui-sref="getSensorDevices">getSensorDevices()</span><br>
+			Returns the IAS-sensors when called. Make sure to call the <i class="active-link" ui-sref="setupIasSensors">setupIasSensors()</i> function before using this function.</li>
+			<ul>
+				<br><li><span class="active-link" ui-sref="sensorDevices">sensorDevices()</span><br>
+				The virtual IAS-sensors created by the <i class="active-link" ui-sref="setupIasSensors">setupIasSensors()</i> function.</li>
+				<ul>
+					<br><li><span class="active-link" ui-sref="getMask">getMask()</span><br>
+					Returns the arming state mask of an individual IAS-sensor.</li>
+					<br><li><span class="active-link" ui-sref="setMask">setMask(code, mask)</span><br>
+					Changes the arming state mask of an individual IAS-sensor.</li>
+				</ul>
+			</ul>
+		</ul><br>
+		<p>More details about the functions, objects and methods are available further in the documentation. The image below shows the dependency structure of the 
+		<i class="active-link" ui-sref="iasDevicesService">iasDevicesService</i>.</p>
+		<img src="images/IAS dependencies.png" alt="IAS dependencies" style="width:729px;height:871px;"> 
+		<h3>Radio frequency devices</h3>
+		<p>The radio frequency devices are taken care of by the <i class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i>. This service doesn't make use of the ZigBee specifications, 
+		for it works with radio frequencies. The <i class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i> contains a few preconfigured SmartPlug objects which can be used to control 
+		the corresponding manufacturer specific SmartPlugs. There is also the option to add a custom SmartPlug, if the SmartPlug you are using is not available in the <i class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i>.
+		The features of the <i class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i> is listed down below.
+		<ul>
+			<br><li><span class="active-link" ui-sref="customPlug">customPlug(name, bitPeriod, protocol, systemCodeBitLength, unitCodeBitLength)</span><br>
+			The <i class="active-link" ui-sref="customPlug">customPlug(name, bitPeriod, protocol, systemCodeBitLength, unitCodeBitLength)</i> object constructor can be used to add custom 
+			manufacturer specific SmartPlugs to your application.</li>
+			<br><li><span class="active-link" ui-sref="getImpulsPlug">getImpulsPlug()</span><br>
+			Returns the Impuls SmartPlug object.</li>
+			<br><li><span class="active-link" ui-sref="getBrennenstuhlRCS1000NPlug">getBrennenstuhlRCS1000NPlug()</span><br>
+			Returns the Brennenstuhl RCS-1000N SmartPlug object.</li>
+			<br><li><span class="active-link" ui-sref="getClickOnClickOffAPA22300RPlug">getClickOnClickOffAPA22300RPlug()</span><br>
+			Returns the ClickOnClickOff APA2-2300R SmartPlug object.</li>
+			<br><li><span class="active-link" ui-sref="getIntertechnoITR1500Plug">getIntertechnoITR1500Plug()</span><br>
+			Returns the Intertechno ITR-1500 SmartPlug object.</li>
+			<br><li><span class="active-link" ui-sref="getElroHomeEasyHE877Plug">getElroHomeEasyHE877Plug()</span><br>
+			Returns the Elro HomeEasy HE877 SmartPlug object.</li>
+			<br><li><span class="active-link" ui-sref="getSiemensRC018Plug">getSiemensRC018Plug()</span><br>
+			Returns the Siemens RC018 SmartPlug object.</li>
+			<br><li><span class="active-link" ui-sref="radioFrequencyPlug">radioFrequencyPlug(plug, systemCode, unitCode, value, group)</span><br>
+			This function allows for activating or disabling the manufacturer specific SmartPlugs.</li>		
+		</ul>
+		<br>
+		<p>More details about the functions, objects and methods are available further in the documentation. The image below shows the dependency structure of the 
+		<i class="active-link" ui-sref="radioFrequencyDevicesService">radioFrequencyDevicesService</i>.</p>
+		<img src="images/RF dependencies.png" alt="RF dependencies" style="width:729px;height:841px;"> 
+		
+	</div>
+</div>

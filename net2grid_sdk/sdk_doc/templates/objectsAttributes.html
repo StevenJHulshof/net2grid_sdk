@@ -1,0 +1,60 @@
+<div>
+<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="functionsAttributes"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="zigbeeLutService">zigbeeLutService</i> / 
+		<i ui-sref="functionsAttributes">get{{content.nameFun}}Attribute()</i> /</p>
+	</div>
+	<div id="content">
+	<h1>{{content.nameObj}}Attribute</h1>
+	<p>The <i class="active-link" ui-sref="objectsAttributes" ng-click="changeAttributeContent(content.label)">{{content.nameObj}}Attribute</i> object content.</p>
+	<h2>Content</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr >
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Value</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>clusterId</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>{{content.clusterId}}</td>
+			</tr>
+			<tr>
+				<td>name</td>
+				<td><span class="label label-warning">string</span></td>
+				<td>{{content.name}}</td>
+			</tr>
+			<tr>
+				<td>server</td>
+				<td><span class="label label-success">boolean</span></td>
+				<td>{{content.server}}</td>
+			</tr>
+			<tr>
+				<td>attributeId</td>
+				<td><span class="label label-danger">number</span></td>
+				<td>{{content.attributeId}}</td>
+			</tr>
+			<tr>
+				<td>type</td>
+				<td><span class="label label-warning">string</span></td>
+				<td>{{content.type}}</td>
+			</tr>
+			<tr>
+				<td>writable</td>
+				<td><span class="label label-success">boolean</span></td>
+				<td>{{content.writable}}</td>
+			</tr>
+			<tr>
+				<td>mandatory</td>
+				<td><span class="label label-success">boolean</span></td>
+				<td>{{content.mandatory}}</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</div>

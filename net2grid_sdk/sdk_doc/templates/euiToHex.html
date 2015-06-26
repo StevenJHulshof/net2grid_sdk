@@ -1,0 +1,53 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="utilityService"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="utilityService">utilityService</i> /</p>
+	</div>
+	<div id="content">
+	<h1>euiToHex(euiDec)</h1>
+	<p>The <i class="active-link" ui-sref="euiToHex">euiToHex(euiDec)</i> function converts the numeric decimal value of an EUI into a hexadecmal representation as a string. 
+	This function can be used to display the numeric EUI of a virtual device as the actual hexadecimal value of the EUI.</p>
+	
+	<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>euiDec</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-danger">number</span></td>
+				<td>Decimal value of the EUI as a number.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>euiHex</td>      
+				<td><span class="label label-royal">Array</span><br><span class="label label-warning">string</span></td>
+				<td>Hexadecimal value of the EUI as a string.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function($scope, utilityService) {
+
+	$scope.euiHexStr = utilityService.euiToHex([0,13,111,0,0,208,227,251]);
+});</code></pre>
+	</div>
+</div>

@@ -1,0 +1,71 @@
+<div>
+	<div id="navigation">
+		<button type="button" class="btn btn-default glyphicon glyphicon-chevron-left" ui-sref="generalDevices"></button>
+		<br>
+		<br>
+		<p><i ui-sref="sdk">SDK</i> / <i ui-sref="net2gridApiModule">net2gridApiModule</i> / <i ui-sref="generalDevicesService">generalDevicesService</i> / 
+		<i ui-sref="getGeneralDevices">getGeneralDevices()</i> / <i ui-sref="generalDevices">generalDevices</i> /</p>
+	</div>
+	<div id="content">
+		<h1>checkCluster(clusterId)</h1>
+		<p>This method will check whether the input cluster parameter is available in the virtual device. Useful for checking the functionality of the device.</p>
+		<h2>Parameters</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>clusterId</td>      
+				<td><span class="label label-danger">number</span></td>
+				<td>The numeric identification code of a cluster.</td>
+			</tr>
+		</tbody>
+	</table>
+	<h2>Returns</h2>
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th>Name</th>		
+				<th>Type</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>check</td>      
+				<td><span class="label label-success">boolean</span></td>
+				<td>Returns true if the cluster is available within the device.</td>
+			</tr>
+		</tbody>
+	</table>
+		<h2>Example code</h2>
+<pre><code>myAppModule.controller('myAppCtrl', function(ipAddressService, generalDevicesService, zigbeeLutService) {
+
+	ipAddressService.setIp('123.456.7.89');
+
+	generalDevicesService.setupGeneralDevices();
+	
+	$scope.generalDevices;
+	
+	$scope.$on('generalDevices.update', function(event) {
+		
+		$scope.generalDevices = generalDevicesService.getGeneralDevices();
+	});
+
+	$scope.checkCluster = function() {
+	
+		var onOffCluster = zigbeeLutService.getCLusterLut().OnOff;
+		
+		if($scope.generalDevices[0].checkCluster(onOffCluster)) {
+		
+			//Do something
+		}
+	}
+});</code></pre>
+	</div>
+</div>

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html ng-app="iasApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <title>IAS application</title>
+
+    <link rel="stylesheet" href="css/ionic.css" />
+    <link href="css/index.css" rel="stylesheet" />
+	
+	<script src="scripts/ionic/ionic.bundle.js"></script>
+	<!-- 
+	<script src="scripts/cordova/cordova.js"></script>
+	<script src="scripts/cordova/index.js"></script>
+	<script src="scripts/cordova/platformOverrides.js"></script>
+		 -->
+	<script src="scripts/iasApp/iasApp.module.js"></script>
+	
+	<script src="scripts/iasApp/net2gridApi/net2gridApi.module.js"></script>
+	<script src="scripts/iasApp/net2gridApi/zigbeeLut.service.js"></script>
+	<script src="scripts/iasApp/net2gridApi/utility.service.js"></script>
+	<script src="scripts/iasApp/net2gridApi/ipAddress.service.js"></script>	
+	<script src="scripts/iasApp/net2gridApi/iasDevices.service.js"></script>
+	
+	<script src="scripts/iasApp/front/front.module.js"></script>
+	<script src="scripts/iasApp/front/front.config.js"></script>
+	<script src="scripts/iasApp/front/zoneMask.service.js"></script>
+	<script src="scripts/iasApp/front/homeTab.ctrl.js"></script>
+	<script src="scripts/iasApp/front/saveSettings.dir.js"></script>
+</head>
+
+<body>
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view></ion-nav-view>
+
+    <script id="templates/tabs.html" type="text/ng-template">
+        <ion-tabs class="tabs-icon-top tabs-positive">
+            <ion-tab title="Home" icon="ion-home" href="#/tab/home">
+                <ion-nav-view name="home-tab"></ion-nav-view>
+            </ion-tab>
+            <ion-tab title="About" icon="ion-ios-information" href="#/tab/about">
+                <ion-nav-view name="about-tab"></ion-nav-view>
+            </ion-tab>		
+        </ion-tabs>
+    </script>
+
+    <script id="templates/home.html" type="text/ng-template">
+        <ion-view view-title="Home">
+            <ion-content class="padding">
+				<div class="list">
+  					<label class="item item-input">
+    					<span class="input-label"><b>IP Address</b></span>
+    					<input type="text" ng-model="settings.ipZgd">
+  					</label>
+					<label class="item item-input item-select">
+						<span class="input-label"><b>Global Arm State</b></span>					
+						<select ng-model="settings.armState">
+							<option>away</option>
+							<option>day</option>
+							<option>night</option>
+							<option>disarm</option>
+						</select>					
+					</label>
+				</div>
+				<div class="list">               
+					<label ng-repeat="i in sensors track by $index" class="item item-input item-select">
+						<span class="input-label">{{i.type}} - {{i.active}}	</span>					
+						<select ng-model="settings.mask[i.label]">
+							<option>day</option>
+							<option>night</option>
+							<option>day & night</option>
+							<option>bypass</option>
+						</select>					
+					</label>
+                </div>	
+				<button class="button button-block button-positive" save-settings-dir={{settings}}>Save</button>
+            </ion-content>
+        </ion-view>
+    </script>
+	
+    <script id="templates/about.html" type="text/ng-template">
+        <ion-view view-title="About">
+            <ion-content class="padding">
+                <h3>IAS application</h3>
+				<p>This application is able to scan a given network for IAS-sensors. These sensors can be actived along with the global arming state of the IAS.</p>
+            </ion-content>
+        </ion-view>
+    </script>
+</body>
+</html>
